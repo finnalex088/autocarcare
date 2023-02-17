@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
-use App\Models\Admin\Insurance;
+use App\Models\Admin\Part;
 
 class PartController extends Controller
 {
