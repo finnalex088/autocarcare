@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use App\Models\Admin\Billing;
+use App\Models\Admin\Part;
 use App\Models\Admin\JobCard;
-use App\Models\Admin\CarMake;
-use App\Models\Admin\CarModel;
 
 
-class JobCardController extends Controller
+
+class BillingController extends Controller
 {
     public function index(Request $request)
     {
-
         if($request->ajax()){
-        $get_data = JobCard::get();
+        $get_data = Billing::get();
         return Datatables::of($get_data)
             ->addIndexColumn()
             ->addColumn('action', function($data){    
-             $delete_url = route('job_card.delete',['id'=>$data->id]);
-             $url_edit = route('job_card.addUpdate',['id'=>$data->id]);
+             $delete_url = route('billing.delete',['id'=>$data->id]);
+             $url_edit = route('billing.addUpdate',['id'=>$data->id]);
              $button = '<a href="'.$url_edit.'" id="'.$data->id.'" class="edit btn btn-success btn-sm"> <i class="fa fa-edit">Edit</i> </a>&nbsp;';
              $button .= '<a  name="delete" class="btn btn-danger" onclick="return confirm(\'Are You Sure Want to Delete?\')" href="'.$delete_url.'" id=" '.$data->id.' "class="delete">Delete<i class="fa fa-trash"></i> </a>';
              return $button;
@@ -32,13 +32,14 @@ class JobCardController extends Controller
             ->rawColumns(['action'])
             ->make(true); 
         }
-        return view('admin.job_card.index');
-    }
+        return view('admin.billing.index');
+}
 
-    public function addUpdate(Request $request , $id = null)
+public function addUpdate(Request $request , $id = null)
     {
         
-        $CarMake = CarMake::select('id','name')->get();
+        $jobCard = JobCard::select('id','name')->get();
+        $part = Part::select('id','name')->get();
         if ($request->isMethod('post')) {
             $job_card = JobCard::findOrNew($request->update_id);
             $job_card->registration_number = $request->registration_number;
@@ -74,18 +75,4 @@ class JobCardController extends Controller
         } 
     }
 
-    public function makeModel(Request $request)
-    {
-        $data['car_model'] = CarModel::where("make_id",$request->make_id)->get(["name", "id"]);
-        return response()->json($data);
-    }
-
-    public function delete(Request $request, $id)
-    {
-        $job_card=JobCard::find($id);
-        $job_card->delete();
-        return redirect()->route('job_card.index')->with('success', 'Job Card Deleted Successfully!.');
-    }
 }
-
-

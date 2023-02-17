@@ -13,7 +13,7 @@ class PartController extends Controller
     {
 
         if($request->ajax()){
-        $get_data = Part_inventory::get();
+        $get_data = Part::get();
         return Datatables::of($get_data)
             ->addIndexColumn()
             ->addColumn('action', function($data){    
@@ -31,6 +31,7 @@ class PartController extends Controller
         }
         return view('admin.partissue.index');
     }
+
 
     public function addUpdate(Request $request , $id = null)
     {
@@ -62,6 +63,7 @@ class PartController extends Controller
     {
         $part=Part::find($id);
         $part->delete();
-        return redirect()->route('job_card.index')->with('success', 'Job Card Deleted Successfully!.');
+        return redirect()->route('partissue.index')->with('success', 'Job Card Deleted Successfully!.');
     }
 }
+

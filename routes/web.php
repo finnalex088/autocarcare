@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\JobCardController;
 use App\Http\Controllers\Admin\InsuranceController;
+use App\Http\Controllers\Admin\PartController;
+
 
 
 
@@ -48,9 +50,15 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
      Route::any('insurance/delete/{id?}', [InsuranceController::class,'delete'])->name('insurance.delete');
 
      /*------------------------------------------part issue-----------------------------------------------*/
-     Route::any('partissue', [InsuranceController::class,'index'])->name('partissue.index');
-    Route::any('partissue/addUpdate/{id?}', [InsuranceController::class,'addUpdate'])->name('partissue.addUpdate');
-     Route::any('partissue/delete/{id?}', [InsuranceController::class,'delete'])->name('partissue.delete');
+     Route::any('partissue', [PartController::class,'index'])->name('partissue.index');
+    Route::any('partissue/addUpdate/{id?}', [PartController::class,'addUpdate'])->name('partissue.addUpdate');
+     Route::any('partissue/delete/{id?}', [PartController::class,'delete'])->name('partissue.delete');
+
+     /*----------------------------------Billing Module--------------------------------------------------*/
+
+    Route::any('billing', [BillingController::class,'index'])->name('billing.index');
+    Route::any('billing/addUpdate/{id?}', [BillingController::class,'addUpdate'])->name('billing.addUpdate');
+     Route::any('billing/delete/{id?}', [BillingController::class,'delete'])->name('billing.delete');
 
 });
 

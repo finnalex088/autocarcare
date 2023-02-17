@@ -38,8 +38,9 @@
   <div class="dropdown-container">
     <a href="{{route('job_card.index')}}">Registration</a>
     <a href="{{route('insurance.index')}}">Insurance details</a>
-    <a href="partissue.html">Part Issue</a>
-	
+    <a href="{{route('partissue.index')}}">Part Issue</a>
+
+
   </div>
          <button class="dropdown-btn">Stocks
     <i class="fa fa-caret-down"></i>
@@ -53,7 +54,7 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Job Card Details</a>
+    <a href="#">billing</a>
     
   </div>
 		<li><a href="{{route('employee.index')}}">Employee Data</a></li>

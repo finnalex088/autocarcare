@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')    
 <div class="container mt-5">
-    <h2 class="mb-4">Insurance List</h2>
+    <h2 class="mb-4">Part List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('partissue.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Add PartIssue</a>
+               <a href="{{route('partissue.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Add Part Issue</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)
