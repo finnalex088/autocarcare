@@ -72,6 +72,35 @@
   });
 });
 </script>
+
+<script>
+   $(document).ready(function () {
+    $('#form_validation').validate({
+     rules: {
+       company_name: {
+          required: true
+       },
+        insurance_type: {
+          required: true
+       },
+       insurance_period: {
+          required: true
+       },
+    },
+    messages: {
+       company_name: {
+          required: "Company Name is required"
+       },
+       insurance_type: {
+          required: "Insurance Type is required"
+       },
+       insurance_period: {
+          required: "Insurance Period is required"
+       },
+    },
+   });
+   });
+</script>
 @endsection
 
 

@@ -4,8 +4,8 @@
 <script src="{{asset('admin/assets/js/dataTables.min.js')}}"></script>
 <script src="{{asset('admin/assets/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('admin/assets/js/dataTables.bootstrap4.min.js')}}"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script type="text/javascript" src="{{asset('admin/assets/js/moment.js')}}"></script>
+<script type="text/javascript" src="{{asset('admin/assets/js/daterangepicker.min.js')}}"></script>
 
 <script type="text/javascript">
 	/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
