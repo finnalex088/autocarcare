@@ -26,7 +26,8 @@
         <thead>
             <tr>
                 <th>Part Name</th>
-                
+                <th>Part Number</th>
+                <th>Part quatity</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -45,6 +46,8 @@
         ajax: "{{ route('partissue.index') }}",
         columns: [
            {data: 'part_name', name: 'part_name'},
+           {data: 'part_no', name: 'part_no'},
+           {data: 'part_quantity', name: 'part_quantity'},
            
            {data: 'action', name: 'action', orderable: true, searchable: true},
            ],
