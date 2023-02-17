@@ -47,6 +47,11 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::any('insurance/addUpdate/{id?}', [InsuranceController::class,'addUpdate'])->name('insurance.addUpdate');
      Route::any('insurance/delete/{id?}', [InsuranceController::class,'delete'])->name('insurance.delete');
 
+     /*------------------------------------------part issue-----------------------------------------------*/
+     Route::any('partissue', [InsuranceController::class,'index'])->name('partissue.index');
+    Route::any('partissue/addUpdate/{id?}', [InsuranceController::class,'addUpdate'])->name('partissue.addUpdate');
+     Route::any('partissue/delete/{id?}', [InsuranceController::class,'delete'])->name('partissue.delete');
+
 });
 
 
