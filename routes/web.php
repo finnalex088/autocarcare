@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Admin\JobCardController;
 use App\Http\Controllers\Admin\InsuranceController;
 use App\Http\Controllers\Admin\PartController;
+use App\Http\Controllers\Admin\BillingController;
+
 
 
 

@@ -38,41 +38,36 @@ class BillingController extends Controller
 public function addUpdate(Request $request , $id = null)
     {
         
-        $jobCard = JobCard::select('id','name')->get();
-        $part = Part::select('id','name')->get();
+        $jobCard = JobCard::select('id','customer_name')->get();
+        $part = Part::select('id','part_name')->get();
         if ($request->isMethod('post')) {
-            $job_card = JobCard::findOrNew($request->update_id);
-            $job_card->registration_number = $request->registration_number;
-            $job_card->make_id  = $request->make_id;
-            $job_card->model_id  = $request->model_id;
-            $job_card->customer_name = $request->customer_name;
-            $job_card->mobile_no = $request->mobile_no;
-            $job_card->address = $request->address;
-            $job_card->color = $request->color;
-            $job_card->insurance_id = $request->insurance_id;
-            $job_card->odometer_reading = $request->odometer_reading;
-            $job_card->fuel_type = $request->fuel_type;
-            $job_card->fuel_level = $request->fuel_level;
-            $job_card->work_type = $request->work_type;
-            $job_card->estimate = $request->estimate;
-            $job_card->image_id = $request->image_id;
-            
-            $job_card->save();
-             if($job_card){
-                $add_update_message = empty($request->update_id) ? 'Job Card Successfully.!' : 'Job Card Successfully.!';
-                return redirect()->route('job_card.index')->with('success', $add_update_message);
+            $billing = Billing::findOrNew($request->update_id);
+            $billing->job_id   = $request->job_id;
+            $billing->part_id   = $request->part_id;
+            $billing->amount  = $request->amount;
+            $billing->save();
+             if($billing){
+                $add_update_message = empty($request->update_id) ? 'Billing Added Successfully.!' : 'Billing Updated Successfully.!';
+                return redirect()->route('billing.index')->with('success', $add_update_message);
             } else {
-                return redirect()->route('job_card.index')->with('error', 'Job Card not Created');
+                return redirect()->route('billing.index')->with('error', 'Billing not Created');
             }
             }else {
             $get_data = '';
             if($id){
-                $get_data =  JobCard::findOrFail($id);
-                return view('admin.job_card.addUpdate')->with(compact('get_data','CarMake'));
+                $get_data =  Billing::findOrFail($id);
+                return view('admin.billing.addUpdate')->with(compact('get_data','jobCard', 'part'));
             } else {
-                return view('admin.job_card.addUpdate')->with(compact('get_data','CarMake'));
+                return view('admin.billing.addUpdate')->with(compact('get_data','jobCard', 'part'));
             }
         } 
+    }
+
+    public function delete(Request $request, $id)
+    {
+        $billing=Billing::find($id);
+        $billing->delete();
+        return redirect()->route('billing.index')->with('success', 'Billing Deleted Successfully!.');
     }
 
 }

@@ -54,7 +54,7 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">billing</a>
+    <a href="{{route('billing.index')}}">billing</a>
     
   </div>
 		<li><a href="{{route('employee.index')}}">Employee Data</a></li>
