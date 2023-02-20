@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\InsuranceController;
 use App\Http\Controllers\Admin\PartController;
 use App\Http\Controllers\Admin\BillingController;
 
-
+use App\Http\Controllers\Admin\stockController;
 
 
 
@@ -62,6 +62,11 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::any('billing/addUpdate/{id?}', [BillingController::class,'addUpdate'])->name('billing.addUpdate');
      Route::any('billing/delete/{id?}', [BillingController::class,'delete'])->name('billing.delete');
 
+      /*----------------------------------stock Module--------------------------------------------------*/
+
+    Route::any('stock', [stockController::class,'index'])->name('stock.index');
+    Route::any('stock/addUpdate/{id?}', [stockController::class,'addUpdate'])->name('stock.addUpdate');
+     Route::any('stock/delete/{id?}', [stockController::class,'delete'])->name('stock.delete');
 });
 
 
