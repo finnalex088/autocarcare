@@ -46,9 +46,9 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="processNo_a.html">Spare Parts</a>
-    <a href="processNo_b.html">Stock wise</a>
-    <a href="newprocessNo_c.html">Category</a>
+    <a href="{{route('stock.index')}}">Spare Parts</a>
+    <a href="{{route('stock.stockdetails')}}">Stock wise</a>
+    
   </div>
        <button class="dropdown-btn">Billing Data
     <i class="fa fa-caret-down"></i>
