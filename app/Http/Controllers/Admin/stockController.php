@@ -11,24 +11,10 @@ class stockController extends Controller
 {
     public function index(Request $request)
     {
-
-        if($request->ajax()){
-        $get_data = Stock::get();
-        return Datatables::of($get_data)
-            ->addIndexColumn()
-            ->addColumn('action', function($data){    
-             $delete_url = route('stock.delete',['id'=>$data->id]);
-             $url_edit = route('stock.addUpdate',['id'=>$data->id]);
-            
-         })
-            
-            
-
-            ->rawColumns(['action'])
-            ->make(true); 
-        }
-        return view('admin.stock.index');
+        $count=Stock::count();
+        return view('admin.stock.index',compact('count'));
     }
+
     public function stockdetails(Request $request)
     {
 
@@ -71,9 +57,9 @@ class stockController extends Controller
             $stock->save();
              if($stock){
                 $add_update_message = empty($request->update_id) ? 'stock Added Successfully.!' : 'stock Updated Successfully.!';
-                return redirect()->route('stock.index')->with('success', $add_update_message);
+                return redirect()->route('stock.stockdetails')->with('success', $add_update_message);
             } else {
-                return redirect()->route('stock.index')->with('error', 'stock not Created');
+                return redirect()->route('stock.stockdetails')->with('error', 'stock not Created');
             }
             }else {
             $get_data = '';
