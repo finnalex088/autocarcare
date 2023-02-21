@@ -53,25 +53,25 @@
    $(document).ready(function () {
     $('#form_validation').validate({
      rules: {
-       company_name: {
+      part_name: {
           required: true
        },
-        insurance_type: {
+       part_no: {
           required: true
        },
-       insurance_period: {
+       part_quantity: {
           required: true
        },
     },
     messages: {
-       company_name: {
-          required: "Company Name is required"
+       part_name: {
+          required: "Part Name is required"
        },
-       insurance_type: {
-          required: "Insurance Type is required"
+       part_no: {
+          required: "Part Number is required"
        },
-       insurance_period: {
-          required: "Insurance Period is required"
+       part_quantity: {
+          required: "Part Quantity is required"
        },
     },
    });
