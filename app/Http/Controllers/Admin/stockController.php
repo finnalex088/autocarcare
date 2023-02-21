@@ -71,9 +71,9 @@ class stockController extends Controller
             $stock->save();
              if($stock){
                 $add_update_message = empty($request->update_id) ? 'stock Added Successfully.!' : 'stock Updated Successfully.!';
-                return redirect()->route('stock.stockdetails')->with('success', $add_update_message);
+                return redirect()->route('stock.index')->with('success', $add_update_message);
             } else {
-                return redirect()->route('stock.stockdetails')->with('error', 'stock not Created');
+                return redirect()->route('stock.index')->with('error', 'stock not Created');
             }
             }else {
             $get_data = '';
@@ -86,6 +86,7 @@ class stockController extends Controller
             }
         } 
     }
+
 
     
 
