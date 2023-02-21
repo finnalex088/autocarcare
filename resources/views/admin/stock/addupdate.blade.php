@@ -20,7 +20,7 @@
      <div class="row">
      
      <div class="col-sm-6">
-     <input type="text"  class="form-control" id="name" name="spare_part_name" value="{{ isset($get_data->spare_part_name) ? $get_data->part_name : old('spare_part_name')}}" placeholder="Spare part name">
+     <input type="text"  class="form-control" id="name" name="spare_part_name" value="{{ isset($get_data->spare_part_name) ? $get_data->spare_part_name : old('spare_part_name')}}" placeholder="Spare part name">
      </div>
      </div><br>
      
@@ -112,35 +112,105 @@
 @endsection
 
 @section('script')
-<script>
+<script src="{{asset('admin/assets/js/jquery.validate.min.js')}}"></script>
+
+  
+    <script>
    $(document).ready(function () {
     $('#form_validation').validate({
      rules: {
-       company_name: {
+      spare_part_category : {
           required: true
        },
-        insurance_type: {
+       spare_part_name: {
           required: true
        },
-       insurance_period: {
+       spare_part_ccode: {
+          required: true
+       },
+       Purchase_price: {
+          required: true
+       },
+       sales_price: {
+          required: true
+       },
+       tax: {
+          required: true
+       },
+       profit_margin: {
+          required: true
+       },
+       UNT: {
+          required: true
+       },
+       location: {
+          required: true
+       },
+       low_stock_quantity: {
+          required: true
+       },
+       HSN_code: {
+          required: true
+       },
+       description: {
+          required: true
+       },
+       manufactured_by: {
           required: true
        },
     },
     messages: {
-       company_name: {
-          required: "Company Name is required"
+      spare_part_category : {
+          required:"Spare part is required"
        },
-       insurance_type: {
-          required: "Insurance Type is required"
+       spare_part_name: {
+          required: "Part name is required"
        },
-       insurance_period: {
-          required: "Insurance Period is required"
+       spare_part_ccode: {
+          required: "Part code is required"
+       },
+       Purchase_price: {
+          required: "Purchase price is required"
+       },
+       sales_price: {
+          required: "sales price is required"
+       },
+       tax: {
+          required: "tax is required"
+       },
+       profit_margin: {
+          required: "Profit margin is required"
+       },
+       UNT: {
+          required: "UNT is required"
+       },
+       location: {
+          required: "loaction is required"
+       },
+       low_stock_quantity: {
+          required: "stock quantity is required"
+       },
+       HSN_code: {
+          required: "HSN code is required"
+       },
+       description: {
+          required: "description is required"
+       },
+       manufactured_by: {
+          required: "manufactured by is required"
        },
     },
    });
    });
 </script>
 @endsection
+
+
+
+
+
+
+
 
 
 
