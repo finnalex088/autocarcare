@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Admin\Stock;
+use App\Models\Admin\spareCategory;
 
 class stockController extends Controller
 {
@@ -38,6 +39,7 @@ class stockController extends Controller
     {
         if ($request->isMethod('post')) {
             $stock = Stock::findOrNew($request->update_id);
+            
             $stock->spare_part_category = $request->spare_part_category;
             $stock->spare_part_name  = $request->spare_part_name;
             $stock->spare_part_ccode  = $request->spare_part_ccode;
