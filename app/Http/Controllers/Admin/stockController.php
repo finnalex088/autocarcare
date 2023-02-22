@@ -71,9 +71,10 @@ class stockController extends Controller
         return view('admin.stock.update',compact('get_data'));
     }
 
-    public function update(Request $request, $id=null)
+
+    public function update(Request $request, $id)
     {
-        echo($id);
+       
         $stock= $request->validate([
             'spare_part_name'=> 'required',
            'spare_part_name'  => 'required', 

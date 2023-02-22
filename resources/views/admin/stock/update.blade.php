@@ -24,6 +24,7 @@
           </div>
         </div>
         @else
+        
         <div class="col-sm-4">
          
           <div class="well" id="well3" style="background-color:red">
@@ -33,7 +34,7 @@
         </div>
          @endif
       </div>
-      <form action="{{ route('stock.update')}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">
+      <form action="{{route('stock.update',$get_data->id)}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">
       @csrf
       <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
      <div class="row">

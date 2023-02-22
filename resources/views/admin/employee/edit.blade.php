@@ -57,6 +57,7 @@
                                     @endif
                         </div>
 
+
                         <div class="form-group">
                             <label for="">Age</label>
                             <input type="number" name="age" value="{{$employee->age}}" class="form-control">
