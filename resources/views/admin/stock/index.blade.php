@@ -18,48 +18,34 @@
 </div>
 	  </div>
       <div class="row">
+        @if($count>5)
         <div class="col-sm-4">
-          @if($count>5)
-          <style>
-            #well1{
-              background-color:#66cf66;
-              color:white;
-            }
-          </style>
-          @endif
-          <div class="well" id="well1">
+          
+         
+          
+          
+          <div class="well" id="well1" style="background-color:green">
              <h4>In Stock</h4>
              <h5>{{$count}}</h5>
           </div>
          
         </div>
+        @elseif($count<=5)
         <div class="col-sm-4">
-        @if($count<=5)
-          <style>
-            #well2{
-              background-color:orange;
-              color:white;
-            }
-          </style>
-          @endif
-          <div class="well" id="well2">
+          <div class="well" id="well2" style="background-color:orange">
               <h4>Low stock</h4>
-              
+               <h5>{{$count}}</h5>
           </div>
         </div>
+        @else
         <div class="col-sm-4">
-        @if($count<=1)
-          <style>
-            #well3{
-              background-color:red;
-              color:white;
-            }
-          </style>
-          @endif
-          <div class="well" id="well3">
+         
+          <div class="well" id="well3" style="background-color:red">
             <h4>Out of stock</h4> 
+             <h5>{{$count}}</h5>
           </div>
         </div>
+         @endif
       </div>
 </div>
 </div>
