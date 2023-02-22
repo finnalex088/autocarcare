@@ -65,6 +65,7 @@ class stockController extends Controller
     }
 
 
+
  public function edit(Request $request, $id)
 {
         $count=Stock::count();
@@ -98,6 +99,13 @@ class stockController extends Controller
     //     return redirect()->route('stock.stockdetails')->with('success', 'Stock Updated Successfully!.');
     // }
 
+public function update(Request $request,$id){
+    
+    $stock= Stock::find($id);
+    
+    return view('admin.stock.update',['get_data'=>$stock]);
+}
+    
 
     public function delete(Request $request, $id)
     {

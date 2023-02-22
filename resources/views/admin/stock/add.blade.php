@@ -7,17 +7,17 @@
       @csrf
       <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
      <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-12">
       <label>spare part category</label>
       <select id="spare_part_category" name="spare_part_category" class="form-control">
+         <option value="">Selete spare part  category</option>
          <option value="">Selete spare part  category</option>
       </select>
          </div>
      
      </div><br>
      <div class="row">
-     
-     <div class="col-sm-6">
+     <div class="col-sm-12">
      <label>Spare part name</label>
      <input type="text"  class="form-control" id="name" name="spare_part_name"  placeholder="Spare part name">
      </div>
@@ -25,13 +25,14 @@
      
      <div class="row">
      
-     <div class="col-sm-6">
+     <div class="col-sm-12">
+     <label>Spare part code</label>
      <input type="text"  class="form-control" id="code" name="spare_part_ccode"  placeholder="Spare part code">
      </div>
      </div><br>
      <div class="row" style="margin-left:30%">
      
-     <div class="col-sm-5">
+     <div class="col-sm-9">
      <button type="button" class="btn btn-outline-dark" style=" display: block;margin-left: auto;margin-right:0;color:blue">Auto generate</button>
      </div>
      <div class="col-sm-1">
@@ -39,23 +40,28 @@
      </div>
      </div><br>
      <div class="row">
-     <div class="col-sm-3">
+     <div class="col-sm-6">
+     <label>Purchase Price</label>
      <input type="text" class="form-control" id="purchasePrice" name="Purchase_price"   placeholder="Purchase Price">
      </div>
-     <div class="col-sm-3">
+     <div class="col-sm-6">
+     <label>Sales Price</label>
      <input type="text"  class="form-control" id="SalesPrice" name="sales_price"  placeholder="Sales Price">
      </div>
      </div><br>
      <div class="row">
-     <div class="col-sm-3">
+     <div class="col-sm-6">
+     <label>Tax</label>
      <input type="text" class="form-control" id="tax" name="tax"   placeholder="Tax">
      </div>
-     <div class="col-sm-3">
+     <div class="col-sm-6">
+     <label>Profit Margin</label>
      <input type="text"  class="form-control" id="ProfitMargin" name="profit_margin"  placeholder="Profit Margin">
      </div>
      </div><br>
      <div class="row">
-     <div class="col-sm-3">
+     <div class="col-sm-6">
+     <label> UNT</label>
      <select id="unt" name="UNT" class="form-control">
          <option value="">Selete UNT</option>
          
@@ -63,32 +69,36 @@
       <option @isset($get_data->id) @if($get_data->UNT == "B") selected @endif  @endisset value="B">B</option>
       </select>
      </div>
-     <div class="col-sm-3">
+     <div class="col-sm-6">
+     <label>Location</label>
      <input type="text"  class="form-control" id="location" name="location"  placeholder="Location">
      </div>
      </div><br>
      <div class="row">
-     <div class="col-sm-3">
-     <input type="text" class="form-control" id="lowStockQuantity" name="low_stock_quantity"   placeholder="Low Stock Quantity">
+     <div class="col-sm-6">
+     <label>Stock Quantity</label>
+     <input type="text" class="form-control" id="lowStockQuantity" name="low_stock_quantity"   placeholder="Stock Quantity">
      </div>
-     <div class="col-sm-3">
+     <div class="col-sm-6">
+     <label>HSN Code</label>
      <input type="text"  class="form-control" id="hsnCode" name="HSN_code"  placeholder="HSN Code">
      </div>
      </div><br>
      <div class="row">
-     
-     <div class="col-sm-6">
+     <div class="col-sm-12">
+     <label>Description</label>
      <input type="text"  class="form-control" id="description" name="description" value="{{ isset($get_data->description) ? $get_data->description : old('description')}}" placeholder="Description">
      </div>
      </div><br>
      <div class="row">
-     <div class="col-sm-6">
+     <div class="col-sm-12">
+     <label>Manufactured by</label>
      <input type="text"  class="form-control" id="ManufacturedBy" name="manufactured_by" value="{{ isset($get_data->manufactured_by) ? $get_data->manufactured_by : old('manufactured_by')}}" placeholder="Manufactured by">
      </div>
      </div><br>
      
      <div class="card-footer">
-      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+      <button type="submit" class="btn btn-primary mr-2" id="submit">Submit</button>
    </div>
      
      
