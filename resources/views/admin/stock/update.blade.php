@@ -16,7 +16,7 @@
           </div>
          
         </div>
-        @elseif($get_data->low_stock_quantity<=10)
+        @elseif($get_data->low_stock_quantity<=10 && $get_data->low_stock_quantity>0)
         <div class="col-sm-4">
           <div class="well" id="well2" style="background-color:orange">
               <h4>Low stock</h4>

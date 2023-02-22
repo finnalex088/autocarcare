@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')    
 <div class="container mt-5">
-    <h2 class="mb-4">Part List</h2>
+    <h2 class="mb-4">spare category</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('partissue.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Spare part</a>
+               <a href="{{route('spareCategory.addUpdate')}}" class="btn btn-primary font-weight-bolder">Add Spare Category</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)
@@ -26,8 +26,6 @@
         <thead>
             <tr>
                 <th>Part Name</th>
-                <th>Part Number</th>
-                <th>Part quatity</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -43,11 +41,9 @@
     var table = $('.yajra-datatable').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('partissue.index') }}",
+        ajax: "{{ route('spareCategory.index') }}",
         columns: [
-           {data: 'part_name', name: 'part_name'},
-           {data: 'part_no', name: 'part_no'},
-           {data: 'part_quantity', name: 'part_quantity'},
+           {data: 'name', name: 'name'},
            
            {data: 'action', name: 'action', orderable: true, searchable: true},
            ],

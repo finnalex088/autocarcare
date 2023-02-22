@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\PartController;
 use App\Http\Controllers\Admin\BillingController;
 
 use App\Http\Controllers\Admin\stockController;
+use App\Http\Controllers\Admin\spareCategoryController;
 
 
 
@@ -70,6 +71,13 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::any('stock/update/{id?}', [stockController::class,'update'])->name('stock.update');
     Route::any('stock/stockdetails/{id?}', [stockController::class,'stockdetails'])->name('stock.stockdetails');
      Route::any('stock/delete/{id?}', [stockController::class,'delete'])->name('stock.delete');
+
+
+     /*----------------------------------spare category Module--------------------------------------------------*/
+
+     Route::any('spareCategory', [spareCategoryController::class,'index'])->name('spareCategory.index');
+     Route::any('spareCategory/addUpdate/{id?}', [spareCategoryController::class,'addUpdate'])->name('spareCategory.addUpdate');
+      Route::any('spareCategory/delete/{id?}', [spareCategoryController::class,'delete'])->name('spareCategory.delete');
 });
 
 

@@ -48,6 +48,7 @@
   <div class="dropdown-container">
     <a href="{{route('stock.add')}}">Stocks</a>
     <a href="{{route('stock.stockdetails')}}">Spare Parts Details</a>
+    <a href="{{route('spareCategory.index')}}">Spare Category</a>
     
     
   </div>
