@@ -3,7 +3,36 @@
 @section('content')
 
 <div class="col-sm-9">
-      
+<div class="row">
+        @if($get_data->low_stock_quantity>10)
+        <div class="col-sm-4">
+          
+         
+          
+          
+          <div class="well" id="well1" style="background-color:green">
+             <h4>In Stock</h4>
+             <h5>{{$get_data->low_stock_quantity}}</h5>
+          </div>
+         
+        </div>
+        @elseif($get_data->low_stock_quantity<=10)
+        <div class="col-sm-4">
+          <div class="well" id="well2" style="background-color:orange">
+              <h4>Low stock</h4>
+               <h5>{{$get_data->low_stock_quantity}}</h5>
+          </div>
+        </div>
+        @else
+        <div class="col-sm-4">
+         
+          <div class="well" id="well3" style="background-color:red">
+            <h4>Out of stock</h4> 
+             <h5>{{$get_data->low_stock_quantity}}</h5>
+          </div>
+        </div>
+         @endif
+      </div>
       <form action="{{ route('stock.update')}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">
       @csrf
       <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
