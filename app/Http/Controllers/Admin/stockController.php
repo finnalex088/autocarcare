@@ -58,7 +58,7 @@ class stockController extends Controller
     }
 
 public function update(Request $request,$id){
-    $count=Stock::count();
+    
     $stock= Stock::find($id);
     
     return view('admin.stock.update',['get_data'=>$stock]);
