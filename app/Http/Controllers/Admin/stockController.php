@@ -9,11 +9,7 @@ use App\Models\Admin\Stock;
 
 class stockController extends Controller
 {
-    public function index(Request $request)
-    {
-        $count=Stock::count();
-        return view('admin.stock.index',compact('count'));
-    }
+   
 
     public function stockdetails(Request $request)
     {

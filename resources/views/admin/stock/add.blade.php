@@ -11,8 +11,6 @@
       <label>spare part category</label>
       <select id="spare_part_category" name="spare_part_category" class="form-control">
          <option value="">Selete spare part  category</option>
-        <option @isset($get_data->id) @if($get_data->spare_part_category == "A") selected @endif  @endisset value="A">A</option>
-      <option @isset($get_data->id) @if($get_data->spare_part_category == "B") selected @endif  @endisset value="B">B</option>
       </select>
          </div>
      
