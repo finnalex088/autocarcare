@@ -4,7 +4,7 @@
     <h2 class="mb-4">Spare Wise</h2>
     <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('stock.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Add Part Issue</a>
+               <a href="{{route('stock.add')}}" class="btn btn-primary font-weight-bolder"> Add Part Issue</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)

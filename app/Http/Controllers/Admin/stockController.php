@@ -24,7 +24,7 @@ class stockController extends Controller
             ->addIndexColumn()
             ->addColumn('action', function($data){    
              $delete_url = route('stock.delete',['id'=>$data->id]);
-             $url_edit = route('stock.addUpdate',['id'=>$data->id]);
+             $url_edit = route('stock.update',['id'=>$data->id]);
              $button = '<a href="'.$url_edit.'" id="'.$data->id.'" class="edit btn btn-success btn-sm"> <i class="fa fa-edit">Edit</i> </a>&nbsp;';
              $button .= '<a  name="delete" class="btn btn-danger" onclick="return confirm(\'Are You Sure Want to Delete?\')" href="'.$delete_url.'" id=" '.$data->id.' "class="delete">Delete<i class="fa fa-trash"></i> </a>';
              return $button;
@@ -37,7 +37,7 @@ class stockController extends Controller
         }
         return view('admin.stock.stockdetails');
     }
-    public function addUpdate(Request $request , $id = null)
+    public function add(Request $request , $id = null)
     {
         if ($request->isMethod('post')) {
             $stock = Stock::findOrNew($request->update_id);
@@ -55,25 +55,18 @@ class stockController extends Controller
             $stock->description	 = $request->description;
             $stock->manufactured_by	 = $request->	manufactured_by;
             $stock->save();
-             if($stock){
-                $add_update_message = empty($request->update_id) ? 'stock Added Successfully.!' : 'stock Updated Successfully.!';
-                return redirect()->route('stock.stockdetails')->with('success', $add_update_message);
-            } else {
-                return redirect()->route('stock.stockdetails')->with('error', 'stock not Created');
-            }
-            }else {
-            $get_data = '';
-            if($id){
-                $get_data =  stock::findOrFail($id);
-                return view('admin.stock.addupdate')->with(compact('get_data'));
-                
-            } else {
-                return view('admin.stock.addupdate')->with(compact('get_data'));
-            }
+            return redirect()->route('stock.stockdetails')->with('success', 'stock added Successfully!.');
+             
         } 
+        return view('admin.stock.add');
     }
 
-
+public function update(Request $request,$id){
+    $count=Stock::count();
+    $stock= Stock::find($id);
+    
+    return view('admin.stock.update',['get_data'=>$stock]);
+}
     
 
     public function delete(Request $request, $id)

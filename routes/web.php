@@ -65,7 +65,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
       /*----------------------------------stock Module--------------------------------------------------*/
 
     Route::any('stock', [stockController::class,'index'])->name('stock.index');
-    Route::any('stock/addUpdate/{id?}', [stockController::class,'addUpdate'])->name('stock.addUpdate');
+    Route::any('stock/add/{id?}', [stockController::class,'add'])->name('stock.add');
+    Route::any('stock/update/{id?}', [stockController::class,'update'])->name('stock.update');
     Route::any('stock/stockdetails/{id?}', [stockController::class,'stockdetails'])->name('stock.stockdetails');
      Route::any('stock/delete/{id?}', [stockController::class,'delete'])->name('stock.delete');
 });

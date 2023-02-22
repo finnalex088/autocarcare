@@ -1,14 +1,15 @@
 
 @extends('layouts.admin')
 @section('content')
+
 <div class="col-sm-9">
       
-      <form action="{{ route('stock.addUpdate')}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">
+      <form action="{{ route('stock.update')}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">
       @csrf
       <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
      <div class="row">
       <div class="col-sm-6">
-      <label>Stock</label>
+      <label>spare part category</label>
       <select id="spare_part_category" name="spare_part_category" class="form-control">
          <option value="">Selete spare part  category</option>
         <option @isset($get_data->id) @if($get_data->spare_part_category == "A") selected @endif  @endisset value="A">A</option>
@@ -20,6 +21,7 @@
      <div class="row">
      
      <div class="col-sm-6">
+     <label>Spare part name</label>
      <input type="text"  class="form-control" id="name" name="spare_part_name" value="{{ isset($get_data->spare_part_name) ? $get_data->spare_part_name : old('spare_part_name')}}" placeholder="Spare part name">
      </div>
      </div><br>
@@ -204,14 +206,6 @@
    });
 </script>
 @endsection
-
-
-
-
-
-
-
-
 
 
 
