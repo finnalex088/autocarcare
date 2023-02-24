@@ -40,10 +40,21 @@
      <div class="row">
       <div class="col-sm-12">
       <label>spare part category</label>
-      <select id="spare_part_category" name="spare_part_category" class="form-control">
-         <option value="">Selete spare part  category</option>
-        <option @isset($get_data->id) @if($get_data->spare_part_category == "A") selected @endif  @endisset value="A">A</option>
-      <option @isset($get_data->id) @if($get_data->spare_part_category == "B") selected @endif  @endisset value="B">B</option>
+      <select class="form-control category_id" name="spare_category_id" data-live-search="true" id="make_ids">
+         <option value="">Selete Make</option>
+         @foreach($spare_category as $list)
+         <option value="{{$list['id']}}"
+         <?php 
+         if(!empty($get_data->spare_category_id))
+         {
+            if($get_data->spare_category_id ==$list['id'])
+            {
+                  echo "selected";
+               }
+            }
+         ?>
+         >{{$list['name']}}</option>
+         @endforeach
       </select>
          </div>
      

@@ -25,7 +25,7 @@
     <table class="table table-bordered yajra-datatable">
         <thead>
             <tr>
-                <th>Part Name</th>
+                <th>Name</th>
                 <th>Action</th>
             </tr>
         </thead>

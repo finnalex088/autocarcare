@@ -37,10 +37,11 @@ class stockController extends Controller
     }
     public function add(Request $request , $id = null)
     {
+        $spare_category = spareCategory::all();
         if ($request->isMethod('post')) {
             $stock = Stock::findOrNew($request->update_id);
             
-            $stock->spare_part_category = $request->spare_part_category;
+            $stock->spare_category_id = $request->spare_category_id;
             $stock->spare_part_name  = $request->spare_part_name;
             $stock->spare_part_ccode  = $request->spare_part_ccode;
             $stock->Purchase_price = $request->Purchase_price;
@@ -57,7 +58,7 @@ class stockController extends Controller
             return redirect()->route('stock.stockdetails')->with('success', 'stock added Successfully!.');
              
         } 
-        return view('admin.stock.add');
+        return view('admin.stock.add',compact('spare_category'));
     }
 
 
@@ -66,11 +67,12 @@ class stockController extends Controller
 {
         $count=Stock::count();
         $get_data= Stock::find($id);
+        $spare_category = spareCategory::all();
         if(!$get_data){
             return redirect('stock.stockdetails')->with('error', 'Stock Not Found');
         }
 
-        return view('admin.stock.update',compact('get_data'));
+        return view('admin.stock.update',compact('get_data','spare_category'));
     }
 
 
