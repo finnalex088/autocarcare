@@ -121,13 +121,9 @@
     <div class="home-content">
       <i class='bx bx-menu' ></i>
       <span class="text">Drop Down Sidebar</span>
-      <div class="col-sm-9">
       
         @yield('content')
         
-     
-      
-      </div>
     </div>
   </section>
 
