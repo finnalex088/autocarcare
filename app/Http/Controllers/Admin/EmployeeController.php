@@ -18,7 +18,7 @@ class EmployeeController extends Controller
             ->addIndexColumn()
            ->addColumn('action', function($row){
                 $btn = '<a href="employee/'. $row->id .'" class="edit btn btn-info btn-sm">View</a>&nbsp;';
-                $btn = $btn.'<a href="employee/'. $row->id .'/edit" class="edit btn btn-success btn-sm"><i class="fa fa-edit"></i>Update</a>&nbsp;';
+                $btn = $btn.'<a href="employee/'. $row->id .'/edit" class="edit btn btn-success btn-sm"><i class="fa fa-edit"></i></a>&nbsp;';
                 $btn = $btn.'<form action="employee/'. $row->id .'" method="post" class="d-inline">
                 '.csrf_field().'
                 '.method_field("DELETE").'

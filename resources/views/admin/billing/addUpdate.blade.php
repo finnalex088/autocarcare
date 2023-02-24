@@ -70,7 +70,7 @@
 <!--begin: Code-->
 <div class="example-code mt-10">
 <div class="example-highlight">
-<pre style="height:400px">
+
 @endsection
 
 @section('script')

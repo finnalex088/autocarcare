@@ -2,11 +2,7 @@
 @section('content')
 <div class="d-flex flex-column-fluid">
 <!--begin::Container-->
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<!--begin::Card-->
-<div class="card card-custom gutter-b example example-compact">
+
 <div class="card-header">
    <h3 class="card-title">Add Insurance</h3>
 </div>
@@ -50,9 +46,7 @@
 </form>
 
 <!--begin: Code-->
-<div class="example-code mt-10">
-<div class="example-highlight">
-<pre style="height:400px">
+
 @endsection
 
 @section('script')

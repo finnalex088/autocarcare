@@ -1,5 +1,6 @@
 /* Google Fonts Import Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -257,4 +258,26 @@
     width: 100%;
     left: 0;
   }
+}
+form{
+ margin-left:150px;
+ background-color: #fff;
+ padding: 20px;
+ 
+ 
+}
+.col{
+  justify-content: space-around;
+}
+.card-title{
+  margin-left: 150px;
+}
+.edit{
+  width:50px;
+}
+.delete{
+  width:50px;
+}
+.anchor{
+  float:right;
 }

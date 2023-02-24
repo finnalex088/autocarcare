@@ -5,7 +5,7 @@
     <h2 class="mb-4">Job Card List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('job_card.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Add Job Card</a>
+               <a href="{{route('job_card.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder"> Add Job Card</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)

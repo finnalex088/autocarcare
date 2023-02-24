@@ -4,7 +4,7 @@
     <h2 class="mb-4">spare category</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('spareCategory.addUpdate')}}" class="btn btn-primary font-weight-bolder">Add Spare Category</a>
+               <a href="{{route('spareCategory.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder">Add Spare Category</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)

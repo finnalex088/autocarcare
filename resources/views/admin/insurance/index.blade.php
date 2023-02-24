@@ -4,7 +4,7 @@
     <h2 class="mb-4">Insurance List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('insurance.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Add Insurance</a>
+               <a href="{{route('insurance.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder" style="text-end"> Add Insurance</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)

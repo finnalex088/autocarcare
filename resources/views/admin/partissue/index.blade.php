@@ -4,7 +4,7 @@
     <h2 class="mb-4">Part List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('partissue.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Spare part</a>
+               <a href="{{route('partissue.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder"> Spare part</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)

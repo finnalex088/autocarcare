@@ -16,25 +16,27 @@
    <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
    <div class="card-body">
       <div class="row">
-      <div class="col-md-10 form-group">
+      <div class="col-md-5 form-group">
          <label>Registration Number
          <span class="text-danger">*</span></label>
-         <input type="registration_number" name="registration_number" class="form-control" value="{{ isset($get_data->registration_number) ? $get_data->registration_number : old('registration_number')}}" placeholder="Enter Registration Number" />
-      </div>
-
-      <div class="col-md-10 form-group">
+        <input type="registration_number" name="registration_number" class="form-control" value="{{ isset($get_data->registration_number) ? $get_data->registration_number : old('registration_number')}}" placeholder="Enter Registration Number" />
+</div>
+<div class="col-md-5 form-group">
          <label>Customer Name
          <span class="text-danger">*</span></label>
          <input type="customer_name" name="customer_name" class="form-control" value="{{ isset($get_data->customer_name) ? $get_data->customer_name : old('customer_name')}}" placeholder="Enter Name" />
       </div>
 
-      <div class="col-md-10 form-group">
+      </div>
+
+      <div class="row">
+      <div class="col-md-5 form-group">
          <label>Phone No
          <span class="text-danger">*</span></label>
          <input type="number" name="mobile_no" class="form-control" value="{{ isset($get_data->mobile_no) ? $get_data->mobile_no : old('mobile_no')}}" placeholder="Enter Phone No" />
       </div>
 
-      <div class="form-group col-md-10">
+      <div class="form-group col-md-5">
       <label for="exampleTextarea">Residence
       <span class="text-danger">*</span></label>
       <textarea type="text" name="address" id="w3review" class="form-control form-control-solid">{{ isset($get_data->address) ? $get_data->address : old('address')}}</textarea>
@@ -42,8 +44,9 @@
       <span class="validation_error" style="color:red">{{ $errors->first('address') }}</span>
       @endif
    </div>
-
-  <div class="col-md-10 form-group">
+</div>
+<div class="row">
+  <div class="col-md-5 form-group">
       <label>Make</label>
       <select class="form-control category_id" name="make_id" data-live-search="true" id="make_ids">
          <option value="">Selete Make</option>
@@ -63,26 +66,28 @@
       </select>
    </div>
 
-   <div class="col-md-10 form-group">
+   <div class="col-md-5 form-group">
       <label>Model </label>
       <select id="make_id" name="model_id" class="form-control">
          
       </select>
    </div>
-
-   <div class="col-md-10 form-group">
+         </div>
+         <div class="row">
+   <div class="col-md-5 form-group">
          <label>Odometer Reading
          <span class="text-danger">*</span></label>
          <input type="number" name="odometer_reading" class="form-control" value="{{ isset($get_data->odometer_reading) ? $get_data->odometer_reading : old('odometer_reading')}}" placeholder="Enter Odometer Reading" />
       </div>
 
-      <div class="col-md-10 form-group">
+      <div class="col-md-5 form-group">
          <label>Color
          <span class="text-danger">*</span></label>
          <input type="color" name="color" class="form-control" value="{{ isset($get_data->color) ? $get_data->color : old('color')}}">
       </div>
-
-      <div class="col-md-10 form-group">
+         </div>
+         <div class="row">
+      <div class="col-md-5 form-group">
       <label>Fuel Type</label>
       <select id="fuel_type" name="fuel_type" class="form-control">
          <option value="">Selete Fuel Type</option>
@@ -92,7 +97,7 @@
       </select>
    </div>
 
-   <div class="col-md-10 form-group">
+   <div class="col-md-5 form-group">
       <label>Fuel Level</label>
       <select id="fuel_level" name="fuel_level" class="form-control">
          <option value="">Selete Fuel Level</option>
@@ -101,8 +106,9 @@
       <option @isset($get_data->id) @if($get_data->fuel_level == "Full") selected @endif  @endisset value="Full">Full</option>
       </select>
    </div>
-
-   <div class="col-md-10 form-group">
+         </div>
+         <div class="row">
+   <div class="col-md-5 form-group">
       <label>Work Type:</label>
       <select id="work_type" name="work_type" class="form-control">
          <option>Select Work Type</option>
@@ -111,24 +117,23 @@
       <option @isset($get_data->id) @if($get_data->work_type == "Insurance") selected @endif  @endisset value="Insurance">Insurance</option>
       </select>
    </div>
-<div class="col-md-10 form-group">
+<div class="col-md-5 form-group">
          <label>Estimate
          <span class="text-danger">*</span></label>
          <input type="text" name="estimate" class="form-control" value="{{ isset($get_data->estimate) ? $get_data->estimate : old('estimate')}}" placeholder="Enter Estimate" />
       </div>
-
+         </div>
 
 </div>
-</div>
+
    <div class="card-footer">
       <button type="submit" class="btn btn-primary mr-2">Submit</button>
    </div>
 </form>
 
 <!--begin: Code-->
-<div class="example-code mt-10">
-<div class="example-highlight">
-<pre style="height:400px">
+
+
 @endsection
 
 @section('script')
