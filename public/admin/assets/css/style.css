@@ -19,6 +19,7 @@
 }
 .sidebar.close{
   width: 78px;
+  opacity: inherit;
 }
 .sidebar .logo-details{
   height: 60px;
@@ -248,6 +249,7 @@
   }
   .sidebar.close{
     width: 0;
+    
   }
   .home-section{
     left: 78px;
@@ -280,4 +282,13 @@ form{
 }
 .anchor{
   float:right;
+}
+#DataTables_Table_0_filter label{
+  float: right;
+}
+.pagination{
+  float: right;
+}
+.custom-select{
+  width: 150px;
 }

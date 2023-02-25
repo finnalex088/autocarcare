@@ -23,7 +23,7 @@
             {{ session('success') }}
          </div>
          @endif
-    <table class="table table-bordered yajra-datatable">
+    <table class="table table-bordered yajra-datatable ">
         <thead>
             <tr>
                 <th>customer_name</th>
