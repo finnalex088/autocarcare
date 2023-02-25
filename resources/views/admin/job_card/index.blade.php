@@ -27,6 +27,16 @@
             <table class="table table-separate table-head-custom table-checkable" id="main_datatable">
             </table>
          </div>
+    <table class="table table-bordered yajra-datatable table-hover ">
+        <thead>
+            <tr>
+                <th>customer_name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </div>
 @endsection
 @section('script')
