@@ -23,6 +23,10 @@
             {{ session('success') }}
          </div>
          @endif
+         <div class="card-body">
+            <table class="table table-separate table-head-custom table-checkable" id="main_datatable">
+            </table>
+         </div>
     <table class="table table-bordered yajra-datatable table-hover ">
         <thead>
             <tr>
@@ -39,7 +43,7 @@
 <script type="text/javascript">
   $(function () {
     
-    var table = $('.yajra-datatable').DataTable({
+    var table = $('#main_datatable').DataTable({
         processing: true,
         serverSide: true,
         ajax: "{{ route('job_card.index') }}",
