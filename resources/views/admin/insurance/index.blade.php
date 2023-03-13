@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')    
-<div class="container mt-5">
-    <h2 class="mb-4">Insurance List</h2>
+
+    <h2 class="mb-4" style="margin-left:12px">Insurance List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
                <a href="{{route('insurance.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder" style="text-end"> Add Insurance</a>
@@ -33,7 +33,7 @@
         <tbody>
         </tbody>
     </table>
-</div>
+
 @endsection
 @section('script')
 <script type="text/javascript">

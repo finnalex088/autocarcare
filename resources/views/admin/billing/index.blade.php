@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')    
-<div class="container mt-5">
-    <h2 class="mb-4">Billing List</h2>
+
+    <h2 class="mb-4" style="margin-left:15px">Billing List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('billing.addUpdate')}}" class="btn btn-primary font-weight-bolder"> Add Billing List</a>
+               <a href="{{route('billing.addUpdate')}}" class="btn btn-primary font-weight-bolder" style="float:right;margin-right:25px"> Add Billing List</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)
@@ -33,7 +33,7 @@
         <tbody>
         </tbody>
     </table>
-</div>
+
 @endsection
 @section('script')
 <script type="text/javascript">
@@ -44,7 +44,7 @@
         serverSide: true,
         ajax: "{{ route('billing.index') }}",
         columns: [
-            {data: 'customer_name', name: 'customer_name'},
+            {data: 'getjob.customer_name', name: 'getjob.customer_name'},
            {data: 'action', name: 'action', orderable: true, searchable: true},
            ],
     });

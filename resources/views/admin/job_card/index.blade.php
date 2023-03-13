@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')    
-<div class="container mt-5">
-    <h2 class="mb-4">Job Card List</h2>
+
+    <h2 class="mb-4" style="margin-left:15px">Job Card List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
                <a href="{{route('job_card.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder"> Add Job Card</a>
@@ -25,10 +25,7 @@
          @endif
          <div class="card-body">
             <table class="table table-separate table-head-custom table-checkable" id="main_datatable">
-            </table>
-         </div>
-    <table class="table table-bordered yajra-datatable table-hover ">
-        <thead>
+            <thead>
             <tr>
                 <th>customer_name</th>
                 <th>Action</th>
@@ -36,8 +33,10 @@
         </thead>
         <tbody>
         </tbody>
-    </table>
-</div>
+            </table>
+         </div>
+   
+
 @endsection
 @section('script')
 <script type="text/javascript">

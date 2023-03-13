@@ -1,11 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-<div class="d-flex flex-column-fluid">
-<!--begin::Container-->
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<!--begin::Card-->
+
 <div class="card card-custom gutter-b example example-compact">
 <div class="card-header">
    <h3 class="card-title">Add Job Card</h3>
@@ -124,7 +119,7 @@
       </div>
          </div>
 
-</div>
+
 
    <div class="card-footer">
       <button type="submit" class="btn btn-primary mr-2">Submit</button>

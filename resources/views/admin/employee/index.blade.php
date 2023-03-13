@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')    
-<div class="container mt-5">
-    <h2 class="mb-4">Employee List</h2>
+
+    <h2 class="mb-4" style="margin-left:12px">Employee List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
-               <a href="{{route('employee.create')}}" class="btn btn-primary font-weight-bolder"> Add Employee</a>
+               <a href="{{route('employee.create')}}" class="anchor btn btn-primary font-weight-bolder"> Add Employee</a>
                <!--end::Button-->
             </div>
             @if (count($errors) > 0)
@@ -34,7 +34,7 @@
         <tbody>
         </tbody>
     </table>
-</div>
+
 @endsection
 @section('script')
 <script type="text/javascript">

@@ -1,22 +1,22 @@
 @extends('layouts.admin')
 
 @section('content') 
-<div class="row">
+
     <div class="col-lg-12 margin-tb">
-        <div class="pull-right">
-            <h2>Add Employee</h2>
-        </div>
+       
+            <h2 class="card-title" style="margin-left:5px;">Add Employee</h2>
+       
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('employee.index') }}"> Back</a>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+
+
+   
+      
             <div class="card">
-                <div class="card-header">{{ __('Create Employee') }}</div>
+                
 
                 <div class="card-body">
                     @if (session('status'))
@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             <label for="">Address</label>
-                            <textarea name="address" id="" cols="30" rows="10" value="{{old('address')}}" class="form-control"></textarea>
+                            <textarea name="address" id="" cols="30" rows="2" value="{{old('address')}}" class="form-control"></textarea>
                             @if($errors->has('address'))
                                         <span class="validation_error" style="color:red">{{ $errors->first('address') }}</span>
                                     @endif
@@ -97,9 +97,9 @@
                     
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        
+   
+
 @endsection
 
 @section('script')

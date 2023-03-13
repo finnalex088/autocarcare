@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')    
-<div class="container mt-5">
-    <h2 class="mb-4">spare category</h2>
+
+    <h2 class="mb-4" style="margin-left:12px">spare category</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
                <a href="{{route('spareCategory.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder">Add Spare Category</a>
@@ -32,7 +32,7 @@
         <tbody>
         </tbody>
     </table>
-</div>
+
 @endsection
 @section('script')
 <script type="text/javascript">

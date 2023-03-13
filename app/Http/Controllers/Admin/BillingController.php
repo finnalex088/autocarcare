@@ -15,8 +15,10 @@ class BillingController extends Controller
 {
     public function index(Request $request)
     {
+     
         if($request->ajax()){
-        $get_data = Billing::get();
+        $get_data = Billing::with(['getjob']);
+        
         return Datatables::of($get_data)
             ->addIndexColumn()
             ->addColumn('action', function($data){    

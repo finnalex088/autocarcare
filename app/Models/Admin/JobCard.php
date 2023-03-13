@@ -16,7 +16,9 @@ class JobCard extends Model
         'address',
         'make_id',
         'model_id',
-    ];    
+    ];  
+   
+  
 }
 
 

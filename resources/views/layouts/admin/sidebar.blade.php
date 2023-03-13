@@ -2,6 +2,7 @@
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
       <span class="logo_name">Car Management</span>
+      
     </div>
     <ul class="nav-links">
       <li>
@@ -10,7 +11,7 @@
           <span class="link_name">Dashboard</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Dashboard</a></li>
+          <li><a class="link_name" href="{{route('job_card.index')}}">Dashboard</a></li>
         </ul>
       </li>
       <li>
@@ -99,12 +100,7 @@
   </li>
 </ul>
   </div>
-  <section class="home-section">
-    <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span class="text">Autocar Care</span>
-    </div>
-    @yield('content')
-  </section>
+ 
+  
 
    

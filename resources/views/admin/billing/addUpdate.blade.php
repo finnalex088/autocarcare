@@ -1,10 +1,10 @@
 @extends('layouts.admin')
 @section('content')
 <div class="d-flex flex-column-fluid">
-<!--begin::Container-->
-<div class="container">
-<div class="row">
-<div class="col-md-12">
+
+
+
+
 <!--begin::Card-->
 <div class="card card-custom gutter-b example example-compact">
 <div class="card-header">
@@ -35,7 +35,7 @@
          >{{$list['customer_name']}}</option>
          @endforeach
       </select>
-   </div>
+         </div>
    <div class="col-md-10 form-group">
       <label>Part Issue</label>
       <select class="form-control category_id" name="part_id" data-live-search="true" id="part_id">
@@ -68,8 +68,7 @@
 </form>
 
 <!--begin: Code-->
-<div class="example-code mt-10">
-<div class="example-highlight">
+
 
 @endsection
 

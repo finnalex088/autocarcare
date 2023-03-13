@@ -3,9 +3,7 @@
 @section('content')
 <div class="d-flex flex-column-fluid">
 <!--begin::Container-->
-<div class="container">
-<div class="row">
-<div class="col-md-12">
+
 <!--begin::Card-->
 <div class="card card-custom gutter-b example example-compact">
 <div class="card-header">

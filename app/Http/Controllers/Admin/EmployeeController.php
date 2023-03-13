@@ -17,14 +17,14 @@ class EmployeeController extends Controller
             return DataTables::of($data)
             ->addIndexColumn()
            ->addColumn('action', function($row){
-                $btn = '<a href="employee/'. $row->id .'" class="edit btn btn-info btn-sm">View</a>&nbsp;';
+                $btn = '<a href="employee/'. $row->id .'" class="edit btn btn-info btn-sm"><i class="fa fa-eye"></i></a>&nbsp;';
                 $btn = $btn.'<a href="employee/'. $row->id .'/edit" class="edit btn btn-success btn-sm"><i class="fa fa-edit"></i></a>&nbsp;';
                 $btn = $btn.'<form action="employee/'. $row->id .'" method="post" class="d-inline">
                 '.csrf_field().'
                 '.method_field("DELETE").'
                                 
                                 <button type="submit" class="btn btn-danger"
-                                onclick="return confirm(\'Are You Sure Want to Delete?\')">Delete</button>
+                                onclick="return confirm(\'Are You Sure Want to Delete?\')"><i class="fa fa-trash"></i></button>
                             </form>';
 
                  return $btn;

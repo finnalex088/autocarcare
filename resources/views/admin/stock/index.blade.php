@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')    
-<div class="container mt-5">
+
     
     
             <div class="col-sm-9">
@@ -49,6 +49,6 @@
       </div>
 </div>
 </div>
-</div>     
+    
 @endsection
 

@@ -231,7 +231,7 @@
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -278,20 +278,45 @@
   .sidebar.close ~ .home-section{
     width: 100%;
     left: 0;
+    
   }
+  .delete{
+    margin-top: 2px;
+  }
+.anchor{
+  float:right;
+  margin-right: 20px;
+}
+#DataTables_Table_0_wrapper .row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#DataTables_Table_0_filter label{
+  float: right;
+}
+#main_datatable_filter{
+  float:right;
+}
+.pagination{
+  float: right;
+}
+.custom-select{
+  width: 150px;
+}
+.btn{
+  margin-left: 15px;
+}
 }
 form{
- margin-left:150px;
+ 
  background-color: #fff;
  padding: 20px;
  
  
 }
-.col{
-  justify-content: space-around;
-}
+
 .card-title{
-  margin-left: 150px;
+  margin-left: 36px;
 }
 .edit{
   width:50px;
@@ -301,15 +326,26 @@ form{
 }
 .anchor{
   float:right;
+  margin-right: 20px;
+}
+#DataTables_Table_0_wrapper .row{
+  margin-left: 0px;
+  margin-right: 0px;
 }
 #DataTables_Table_0_filter label{
   float: right;
+}
+#main_datatable_filter{
+  float:right;
 }
 .pagination{
   float: right;
 }
 .custom-select{
   width: 150px;
+}
+.btn{
+  margin-left: 15px;
 }
 
 
@@ -377,4 +413,20 @@ form{
 }
 .boxes .box.box3{
   background-color: var(--box3-color);
+}
+.card-body .row{
+  margin-left: 0px;
+  margin-right:0px;
+}
+#main_datatable_wrapper .row
+{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+form{
+  display: center;
+}
+.card-body{
+  margin: 0 auto; /* Added */
+        float: none;
 }

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')    
-<div class="container mt-5">
-    <h2 class="mb-4">Part List</h2>
+
+    <h2 class="mb-4" style="margin-left:15px">Part List</h2>
      <div class="card-toolbar">
                <!--begin::Button-->
                <a href="{{route('partissue.addUpdate')}}" class="anchor btn btn-primary font-weight-bolder"> Spare part</a>
@@ -34,7 +34,7 @@
         <tbody>
         </tbody>
     </table>
-</div>
+
 @endsection
 @section('script')
 <script type="text/javascript">
