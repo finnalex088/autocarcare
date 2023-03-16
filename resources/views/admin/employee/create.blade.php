@@ -4,7 +4,7 @@
 
     <div class="col-lg-12 margin-tb">
        
-            <h2 class="card-title" style="margin-left:5px;">Add Employee</h2>
+            <h2 class="card-title" style="margin-left:5%">Add Employee</h2>
        
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('employee.index') }}"> Back</a>

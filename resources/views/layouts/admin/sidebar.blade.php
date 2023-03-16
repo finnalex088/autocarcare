@@ -1,4 +1,4 @@
-<div class="sidebar close">
+<div class="sidebar ">
     <div class="logo-details">
       <i class='bx bxl-c-plus-plus'></i>
       <span class="logo_name">Car Management</span>

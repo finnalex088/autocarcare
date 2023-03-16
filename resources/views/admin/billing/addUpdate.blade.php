@@ -38,7 +38,7 @@
          </div>
    <div class="col-md-10 form-group">
       <label>Part Issue</label>
-      <select class="form-control category_id" name="part_id" data-live-search="true" id="part_id">
+      <select  class="form-control category_id" name="part_id[]" data-live-search="true" id="part_id" multiple="multiple">
          <option value="">Selete Part</option>
          @foreach($part as $list)
          <option value="{{$list['id']}}"
@@ -55,10 +55,33 @@
          @endforeach
       </select>
    </div>
+
+  
+
     <div class="col-md-10 form-group">
          <label>Amount
          <span class="text-danger">*</span></label>
-         <input type="number" name="amount" class="form-control" value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount" />
+         <input type="number" name="amount" class="form-control" value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount"  onchange="Calc(this);"/>
+      </div>
+
+      <div class="col-md-10 form-group">
+      <label>Select Labour Charges</label>
+      <select class="form-control category_id" name="" data-live-search="true" id="labour_charges" onchange="changeStatus()">
+         <option value="">Selete type of labour charges</option>
+         <option value="fix">Fix price</option>
+         <option value="percentage">percentege</option>
+      </select>
+         </div>
+
+         
+    <div class="col-md-10 form-group total_amount1" id="total_amount" >
+         
+         <input type="number" name="total_amount" class="form-control" id="total_amount" onkeyup="myFunction();"  onchange="Calc(this);"/>
+      </div>
+
+      <div class="col-md-10 form-group total_amount2" id="total_amount3" >
+      <label>Total Amount</label>
+         <input type="number" name="total_amount" class="form-control"   />
       </div>
 </div>
 </div>
@@ -174,6 +197,21 @@
     },
    });
    });
+
+   function changeStatus(){
+      var status=document.getElementById("labour_charges");
+      if(status.value=="fix" || status.value=="percentage"){
+         var element = document.getElementById("total_amount");
+  element.classList.remove("total_amount1");
+  var element1 = document.getElementById("total_amount3");
+  element1.classList.remove("total_amount2");
+      }
+      else{
+         element.classList.add("total_amount1");
+      }
+   }
+
+ 
 </script>
 @endsection
 

@@ -15,6 +15,7 @@ class BillingController extends Controller
 {
     public function index(Request $request)
     {
+        
      
         if($request->ajax()){
         $get_data = Billing::with(['getjob']);
@@ -45,7 +46,8 @@ public function addUpdate(Request $request , $id = null)
         if ($request->isMethod('post')) {
             $billing = Billing::findOrNew($request->update_id);
             $billing->job_id   = $request->job_id;
-            $billing->part_id   = $request->part_id;
+            
+            $billing->part_id   = implode(',',$request->part_id);
             $billing->amount  = $request->amount;
             $billing->save();
              if($billing){

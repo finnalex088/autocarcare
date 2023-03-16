@@ -36,10 +36,7 @@
   z-index: 100;
   transition: all 0.5s ease;
 }
-.sidebar.close{
-  width: 78px;
-  opacity: inherit;
-}
+
 .sidebar .logo-details{
   height: 60px;
   width: 100%;
@@ -61,19 +58,13 @@
   transition: 0.3s ease;
   transition-delay: 0.1s;
 }
-.sidebar.close .logo-details .logo_name{
-  transition-delay: 0s;
-  opacity: 0;
-  pointer-events: none;
-}
+
 .sidebar .nav-links{
   height: 100%;
   padding: 30px 0 150px 0;
   overflow: auto;
 }
-.sidebar.close .nav-links{
-  overflow: visible;
-}
+
 .sidebar .nav-links::-webkit-scrollbar{
   display: none;
 }
@@ -90,9 +81,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.sidebar.close .nav-links li .iocn-link{
-  display: block
-}
+
 .sidebar .nav-links li i{
   height: 50px;
   min-width: 78px;
@@ -192,12 +181,7 @@
   padding: 12px 0;
   transition: all 0.5s ease;
 }
-.sidebar.close .profile-details{
-  background: none;
-}
-.sidebar.close .profile-details{
-  width: 78px;
-}
+
 .sidebar .profile-details .profile-content{
   display: flex;
   align-items: center;
@@ -259,54 +243,7 @@
   font-size: 26px;
   font-weight: 600;
 }
-@media (max-width: 400px) {
-  .sidebar.close .nav-links li .sub-menu{
-    display: none;
-  }
-  .sidebar{
-    width: 78px;
-  }
-  .sidebar.close{
-    width: 0;
-    
-  }
-  .home-section{
-    left: 78px;
-    width: calc(100% - 78px);
-    z-index: 100;
-  }
-  .sidebar.close ~ .home-section{
-    width: 100%;
-    left: 0;
-    
-  }
-  .delete{
-    margin-top: 2px;
-  }
-.anchor{
-  float:right;
-  margin-right: 20px;
-}
-#DataTables_Table_0_wrapper .row{
-  margin-left: 0px;
-  margin-right: 0px;
-}
-#DataTables_Table_0_filter label{
-  float: right;
-}
-#main_datatable_filter{
-  float:right;
-}
-.pagination{
-  float: right;
-}
-.custom-select{
-  width: 150px;
-}
-.btn{
-  margin-left: 15px;
-}
-}
+
 form{
  
  background-color: #fff;
@@ -316,7 +253,7 @@ form{
 }
 
 .card-title{
-  margin-left: 36px;
+  margin-left: 8%;
 }
 .edit{
   width:50px;
@@ -345,11 +282,18 @@ form{
   width: 150px;
 }
 .btn{
-  margin-left: 15px;
+  margin-left: 7%;
 }
 
-
-
+.pull-righ a{
+  margin-right: 5% !important;
+}
+.total_amount1{
+  display:none;
+}
+.total_amount2{
+  display:none;
+}
 
 .dashboard .dash-content{
   padding-top: 50px;
@@ -429,4 +373,7 @@ form{
 .card-body{
   margin: 0 auto; /* Added */
         float: none;
+}
+.form-group{
+  margin-left:5%;
 }
