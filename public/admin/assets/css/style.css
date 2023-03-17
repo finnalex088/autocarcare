@@ -288,10 +288,16 @@ form{
 .pull-righ a{
   margin-right: 5% !important;
 }
-.total_amount1{
+.fix_price{
   display:none;
 }
-.total_amount2{
+.percentage{
+  display:none;
+}
+.total_amount{
+  display:none;
+}
+.total_amount1{
   display:none;
 }
 

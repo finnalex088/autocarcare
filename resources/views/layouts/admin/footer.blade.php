@@ -19,10 +19,7 @@
   }
 
   
-  sidebarBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("close");
-    
-  });
+
 
 
   </script>

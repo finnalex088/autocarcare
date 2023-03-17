@@ -61,7 +61,7 @@
     <div class="col-md-10 form-group">
          <label>Amount
          <span class="text-danger">*</span></label>
-         <input type="number" name="amount" class="form-control" value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount"  onchange="Calc(this);"/>
+         <input type="number" name="amount" id="amount" class="form-control" value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount"  onclick="add();"/>
       </div>
 
       <div class="col-md-10 form-group">
@@ -74,15 +74,26 @@
          </div>
 
          
-    <div class="col-md-10 form-group total_amount1" id="total_amount" >
+    <div class="col-md-10 form-group fix_price" id="fix_price" >
          
-         <input type="number" name="total_amount" class="form-control" id="total_amount" onkeyup="myFunction();"  onchange="Calc(this);"/>
+         <input type="number" name="total_amount" class="form-control" id="fix_price1" onclick="add()" placeholder="enter fix price"  />
       </div>
 
-      <div class="col-md-10 form-group total_amount2" id="total_amount3" >
+      <div class="col-md-10 form-group total_amount" id="total_amount" >
       <label>Total Amount</label>
-         <input type="number" name="total_amount" class="form-control"   />
+         <input type="number" name="total_amount" id="total" class="form-control"   />
       </div>
+
+      <div class="col-md-10 form-group percentage" id="percentage" >
+         
+         <input type="number" name="percentage1" class="form-control" id="percentage1" onclick="add();" placeholder="enter percentage"  />
+      </div>
+
+      <div class="col-md-10 form-group total_amount1" id="total_amount1" placeholder="percentage price" >
+      <label>Total Amount</label>
+         <input type="number" name="total_amount1" id="total1" class="form-control"   />
+      </div>
+
 </div>
 </div>
    <div class="card-footer">
@@ -200,16 +211,39 @@
 
    function changeStatus(){
       var status=document.getElementById("labour_charges");
-      if(status.value=="fix" || status.value=="percentage"){
-         var element = document.getElementById("total_amount");
-  element.classList.remove("total_amount1");
-  var element1 = document.getElementById("total_amount3");
-  element1.classList.remove("total_amount2");
+      if(status.value=="fix"){
+         var element = document.getElementById("fix_price");
+  element.classList.remove("fix_price");
+  var element1 = document.getElementById("total_amount");
+  element1.classList.remove("total_amount");
+  
+      }
+      else if(status.value=="percentage"){
+         var element = document.getElementById("percentage");
+  element.classList.remove("percentage");
+  var element1 = document.getElementById("total_amount1");
+  element1.classList.remove("total_amount1");
+  
       }
       else{
-         element.classList.add("total_amount1");
+        
       }
    }
+   
+   function add(){
+   var a=document.getElementById("amount").value;
+   var b=document.getElementById("fix_price1").value;
+   var c=document.getElementById("percentage1").value;
+   var total=parseFloat(a)+parseFloat(b);
+   console.log(total);
+   document.getElementById("total").value=total;
+   
+   var total1=(parseFloat(a)*parseFloat(c))/100;
+   console.log(total1);
+   document.getElementById("total1").value=total1;
+}
+
+ 
 
  
 </script>
