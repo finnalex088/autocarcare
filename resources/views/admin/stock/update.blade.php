@@ -2,7 +2,7 @@
 @extends('layouts.admin')
 @section('content')
 
-<div class="col-sm-9">
+<div class="col-sm-9" style="margin-left:12%">
 <div class="row">
         @if($get_data->low_stock_quantity>10)
         <div class="col-sm-4">

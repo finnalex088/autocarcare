@@ -61,7 +61,7 @@
     <div class="col-md-10 form-group">
          <label>Amount
          <span class="text-danger">*</span></label>
-         <input type="number" name="amount" id="amount" class="form-control" value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount"  onclick="add();"/>
+         <input type="number" name="amount" id="amount" class="form-control" value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount"  onchange="add();"/>
       </div>
 
       <div class="col-md-10 form-group">
@@ -76,21 +76,21 @@
          
     <div class="col-md-10 form-group fix_price" id="fix_price" >
          
-         <input type="number" name="total_amount" class="form-control" id="fix_price1" onclick="add()" placeholder="enter fix price"  />
+         <input type="number" name="total_amount" class="form-control" id="fix_price1" onchange="add()" placeholder="enter fix price"  />
       </div>
 
       <div class="col-md-10 form-group total_amount" id="total_amount" >
-      <label>Total Amount</label>
+      <label>Total Amount +GST</label>
          <input type="number" name="total_amount" id="total" class="form-control"   />
       </div>
 
       <div class="col-md-10 form-group percentage" id="percentage" >
          
-         <input type="number" name="percentage1" class="form-control" id="percentage1" onclick="add();" placeholder="enter percentage"  />
+         <input type="number" name="percentage1" class="form-control" id="percentage1" onchange="add();" placeholder="enter percentage"  />
       </div>
 
       <div class="col-md-10 form-group total_amount1" id="total_amount1" placeholder="percentage price" >
-      <label>Total Amount</label>
+      <label>Total Amount + GST</label>
          <input type="number" name="total_amount1" id="total1" class="form-control"   />
       </div>
 
@@ -216,6 +216,11 @@
   element.classList.remove("fix_price");
   var element1 = document.getElementById("total_amount");
   element1.classList.remove("total_amount");
+  var element = document.getElementById("percentage");
+  element.classList.add("percentage");
+  var element1 = document.getElementById("total_amount1");
+  element1.classList.add("total_amount1");
+  
   
       }
       else if(status.value=="percentage"){
@@ -223,6 +228,11 @@
   element.classList.remove("percentage");
   var element1 = document.getElementById("total_amount1");
   element1.classList.remove("total_amount1");
+
+  var element = document.getElementById("fix_price");
+  element.classList.add("fix_price");
+  var element1 = document.getElementById("total_amount");
+  element1.classList.add("total_amount");
   
       }
       else{
@@ -234,11 +244,11 @@
    var a=document.getElementById("amount").value;
    var b=document.getElementById("fix_price1").value;
    var c=document.getElementById("percentage1").value;
-   var total=parseFloat(a)+parseFloat(b);
+   var total=((parseFloat(a)+parseFloat(b))*18)/100;
    console.log(total);
    document.getElementById("total").value=total;
    
-   var total1=(parseFloat(a)*parseFloat(c))/100;
+   var total1=(((parseFloat(a)*parseFloat(c))/100)*18)/100;
    console.log(total1);
    document.getElementById("total1").value=total1;
 }
