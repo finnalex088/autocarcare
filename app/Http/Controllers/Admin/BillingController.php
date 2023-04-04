@@ -44,10 +44,13 @@ public function addUpdate(Request $request , $id = null)
         $jobCard = JobCard::select('id','customer_name')->get();
         $part = Part::select('id','part_name')->get();
         if ($request->isMethod('post')) {
+          
             $billing = Billing::findOrNew($request->update_id);
             $billing->job_id   = $request->job_id;
             $billing->part_id   = implode(',',$request->part_id);
             $billing->amount  = $request->amount;
+            $billing->fix_total_amount  = $request->fix_total_amount;
+            $billing->percentage_total_amount = $request->percentage_total_amount;
             $billing->save();
              if($billing){
                 $add_update_message = empty($request->update_id) ? 'Billing Added Successfully.!' : 'Billing Updated Successfully.!';
