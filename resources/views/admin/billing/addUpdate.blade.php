@@ -81,7 +81,7 @@
 
       <div class="col-md-10 form-group total_amount" id="total_amount" >
       <label>Total Amount +GST</label>
-         <input type="number" name="total_amount" id="total" class="form-control"   />
+         <input type="number" name="fix_total_amount" id="total" class="form-control"  />
       </div>
 
       <div class="col-md-10 form-group percentage" id="percentage" >
@@ -91,7 +91,7 @@
 
       <div class="col-md-10 form-group total_amount1" id="total_amount1" placeholder="percentage price" >
       <label>Total Amount + GST</label>
-         <input type="number" name="total_amount1" id="total1" class="form-control"   />
+         <input type="number" name="percentage_total_amount" id="total1" class="form-control"   />
       </div>
 
 </div>
@@ -244,11 +244,11 @@
    var a=document.getElementById("amount").value;
    var b=document.getElementById("fix_price1").value;
    var c=document.getElementById("percentage1").value;
-   var total=((parseFloat(a)+parseFloat(b))*18)/100;
+   var total=(parseFloat(a)+parseFloat(b))+((parseFloat(a)+parseFloat(b))*18)/100;
    console.log(total);
    document.getElementById("total").value=total;
    
-   var total1=(((parseFloat(a)*parseFloat(c))/100)*18)/100;
+   var total1=((parseFloat(a)*parseFloat(c))/100)+(((parseFloat(a)*parseFloat(c))/100)*18)/100;
    console.log(total1);
    document.getElementById("total1").value=total1;
 }
