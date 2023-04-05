@@ -37,6 +37,7 @@
 @endsection
 
 @section('script')
+<script src="{{asset('admin/assets/js/jquery.validate.min.js')}}"></script>
 <script>
    $(document).ready(function () {
     $('#form_validation').validate({
@@ -47,13 +48,12 @@
        
     },
     messages: {
-       name: {
+      name: {
           required: "Spare Category is required"
        },
       
        },
-    },
-   });
+    });
    });
 </script>
 @endsection

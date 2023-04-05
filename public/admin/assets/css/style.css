@@ -383,3 +383,7 @@ form{
 .form-group{
   margin-left:5%;
 }
+
+.error {
+  color: #FF0000;
+}

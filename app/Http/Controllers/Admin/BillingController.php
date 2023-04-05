@@ -46,7 +46,6 @@ public function addUpdate(Request $request , $id = null)
         if ($request->isMethod('post')) {
             $part_id = $request->part_id;
             $data = json_encode($part_id);
-            dd($data);
             $billing = Billing::findOrNew($request->update_id);
             $billing->job_id   = $request->job_id;
             $billing->part_id   = $data;

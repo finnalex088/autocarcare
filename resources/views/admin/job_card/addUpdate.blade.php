@@ -14,7 +14,7 @@
       <div class="col-md-5 form-group">
          <label>Registration Number
          <span class="text-danger">*</span></label>
-        <input type="registration_number" name="registration_number" class="form-control" value="{{ isset($get_data->registration_number) ? $get_data->registration_number : old('registration_number')}}" placeholder="Enter Registration Number" />
+        <input type="number" name="registration_number" class="form-control" value="{{ isset($get_data->registration_number) ? $get_data->registration_number : old('registration_number')}}" placeholder="Enter Registration Number" />
 </div>
 <div class="col-md-5 form-group">
          <label>Customer Name
