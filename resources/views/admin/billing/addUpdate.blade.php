@@ -62,7 +62,7 @@
     <div class="col-md-10 form-group">
          <label>Amount
          <span class="text-danger">*</span></label>
-         <input type="number" name="amount" id="amount" class="form-control" value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount"  onchange="add();"/>
+         <input type="number" name="amount" id="amount" class="form-control " value="{{ isset($get_data->amount) ? $get_data->amount : old('amount')}}" placeholder="Enter Amount"   onchange="add();"/>
       </div>
 
       <div class="col-md-10 form-group">
@@ -77,7 +77,7 @@
          
     <div class="col-md-10 form-group fix_price" id="fix_price" >
          
-         <input type="number" name="total_amount" class="form-control" id="fix_price1" onchange="add()" placeholder="enter fix price"  />
+         <input type="number" name="total_amount" class="form-control fix_price1" id="fix_price1" placeholder="enter fix price"  />
       </div>
 
       <div class="col-md-10 form-group total_amount" id="total_amount" >
@@ -87,7 +87,7 @@
 
       <div class="col-md-10 form-group percentage" id="percentage" >
          
-         <input type="number" name="percentage1" class="form-control" id="percentage1" onchange="add();" placeholder="enter percentage"  />
+         <input type="number" name="percentage1" class="form-control fix_price1" id="percentage1" placeholder="enter percentage"  />
       </div>
 
       <div class="col-md-10 form-group total_amount1" id="total_amount1" placeholder="percentage price" >
@@ -194,8 +194,9 @@
         
       }
    }
-   
-   function add(){
+
+   $(document).ready(function() {
+  $('.fix_price1').on('keyup', function(event) {
    var a=document.getElementById("amount").value;
    var b=document.getElementById("fix_price1").value;
    var c=document.getElementById("percentage1").value;
@@ -206,7 +207,21 @@
    var total1=((parseFloat(a)*parseFloat(c))/100)+(((parseFloat(a)*parseFloat(c))/100)*18)/100;
    console.log(total1);
    document.getElementById("total1").value=total1;
-}
+  });
+});
+   
+//    function add(){
+//    var a=document.getElementById("amount").value;
+//    var b=document.getElementById("fix_price1").value;
+//    var c=document.getElementById("percentage1").value;
+//    var total=(parseFloat(a)+parseFloat(b))+((parseFloat(a)+parseFloat(b))*18)/100;
+//    console.log(total);
+//    document.getElementById("total").value=total;
+   
+//    var total1=((parseFloat(a)*parseFloat(c))/100)+(((parseFloat(a)*parseFloat(c))/100)*18)/100;
+//    console.log(total1);
+//    document.getElementById("total1").value=total1;
+// }
 
  
 
