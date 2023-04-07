@@ -32,8 +32,9 @@
    <div class="col-md-10 form-group">
          <label>Insurance Period
          <span class="text-danger">*</span></label>
-         {{-- <input type="date" name="insurance_period" class="form-control" value="{{ isset($get_data->insurance_period) ? $get_data->insurance_period : old('insurance_period')}}" placeholder="Enter Company Name" /> --}}
-         <input type="text" required="" placeholder="Insurance Type" name="insurance_period"  id="kt_daterangepicker_1">
+         
+         <!-- <input type="text" required="" placeholder="Insurance Type" name="insurance_period"  id="kt_daterangepicker_1"> -->
+         <input type="text" name="insurance_period" value="" />
 
       </div>
 
@@ -53,17 +54,23 @@
 </script>
 
 <script type="text/javascript">
-  $(document).ready(function(){
   $(function() {
-    $('input[name="insurance_period"]').daterangepicker({
-      "startDate": "01/01/2020",
-      "endDate": "17/01/2020",
-      opens: 'center',
-      locale: {
-        format: 'DD/MM/YYYY'
-      }
-    });
-  });
+
+$('input[name="insurance_period"]').daterangepicker({
+    autoUpdateInput: false,
+    locale: {
+        cancelLabel: 'Clear'
+    }
+});
+
+$('input[name="insurance_period"]').on('apply.daterangepicker', function(ev, picker) {
+    $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+});
+
+$('input[name="insurance_period"]').on('cancel.daterangepicker', function(ev, picker) {
+    $(this).val('');
+});
+
 });
 </script>
 
@@ -94,6 +101,24 @@
     },
    });
    });
+   $(function() {
+
+$('input[name="datefilter"]').daterangepicker({
+    autoUpdateInput: false,
+    locale: {
+        cancelLabel: 'Clear'
+    }
+});
+
+$('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+    $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+});
+
+$('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+    $(this).val('');
+});
+
+});
 </script>
 @endsection
 
