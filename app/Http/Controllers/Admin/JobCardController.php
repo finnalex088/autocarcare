@@ -41,7 +41,7 @@ class JobCardController extends Controller
         $CarMake = CarMake::select('id','name')->get();
         if ($request->isMethod('post')) {
             $img = $request->image;
-            $folderPath = "public/";
+            $folderPath = "uploads/";
             
             $image_parts = explode(";base64,", $img);
             $image_type_aux = explode("image/", $image_parts[0]);

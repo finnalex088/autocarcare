@@ -129,7 +129,7 @@
             <div class="col-md-6">
                 <div id="results">Your captured image will appear here...</div>
                 @if(isset($get_data->image_id))
-                <img src="{{ asset('storage/app/public/'.$get_data->image_id) }}" alt="Image">
+                <img src="{{ asset('storage/app/uploads/'.$get_data->image_id) }}" alt="Image">
                 @endif
             </div>
         </div>
