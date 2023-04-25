@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('billings', function (Blueprint $table) {
-            $table->string('part_id')->nullable()->change();
+        Schema::table('job_cards', function (Blueprint $table) {
+            $table->string('make_id')->after('address');
         });
     }
 
@@ -25,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('billings', function (Blueprint $table) {
-            $table->string('part_id')->nullable()->change();
+        Schema::table('job_cards', function (Blueprint $table) {
+            //
         });
     }
 };

@@ -35,9 +35,9 @@
      </div><br>
      <div class="row" style="margin-left:30%">
      
-     <div class="col-sm-12">
+     <!-- <div class="col-sm-12">
      <button type="button" class="btn btn-outline-dark" style=" display: block;margin-left: auto;margin-right:0;color:blue">Auto generate</button>
-     </div>
+     </div> -->
     
      </div><br>
      <div class="row">

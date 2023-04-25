@@ -40,18 +40,18 @@ class JobCardController extends Controller
         
         $CarMake = CarMake::select('id','name')->get();
         if ($request->isMethod('post')) {
-            $img = $request->image;
-            $folderPath = "uploads/";
+            // $img = $request->image;
+            // $folderPath = "uploads/";
             
-            $image_parts = explode(";base64,", $img);
-            $image_type_aux = explode("image/", $image_parts[0]);
-            $image_type = $image_type_aux[1];
+            // $image_parts = explode(";base64,", $img);
+            // $image_type_aux = explode("image/", $image_parts[0]);
+            // $image_type = $image_type_aux[1];
             
-            $image_base64 = base64_decode($image_parts[1]);
-            $fileName = uniqid() . '.png';
+            // $image_base64 = base64_decode($image_parts[1]);
+            // $fileName = uniqid() . '.png';
             
-            $file = $folderPath . $fileName;
-            Storage::put($file, $image_base64);
+            // $file = $folderPath . $fileName;
+            // Storage::put($file, $image_base64);
            
             $job_card = JobCard::findOrNew($request->update_id);
             $job_card->registration_number = $request->registration_number;
@@ -67,7 +67,7 @@ class JobCardController extends Controller
             $job_card->fuel_level = $request->fuel_level;
             $job_card->work_type = $request->work_type;
             $job_card->estimate = $request->estimate;
-            $job_card->image_id = $fileName;
+            // $job_card->image_id = $fileName;
             
             $job_card->save();
              if($job_card){

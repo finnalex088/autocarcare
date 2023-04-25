@@ -12,8 +12,8 @@
         </div>
     </div>
      
-    <div class="row mt-4">
-        <h2>car</h2>
+    
+        <h2 class="ml-2">car</h2>
             <div class="col">
                 <div class="table-responsive">
                     <table class="table table-bordered">
@@ -76,7 +76,7 @@
                             
                             </tbody>
                     </table>
-                </div>
+               
             </div>
         </div>
     </div>

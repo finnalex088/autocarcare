@@ -40,6 +40,7 @@ class stockController extends Controller
         $spare_category = spareCategory::all();
         if ($request->isMethod('post')) {
             $stock = Stock::findOrNew($request->update_id);
+            //$stock = Stock::where('spare_category_id', $request->update_id)->firstOrNew();
             
             $stock->spare_category_id = $request->spare_category_id;
             $stock->spare_part_name  = $request->spare_part_name;
