@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Admin\Part;
+use App\Models\Admin\JobCard;
 
 class PartController extends Controller
 {
@@ -13,6 +14,7 @@ class PartController extends Controller
     {
 
         if($request->ajax()){
+         
         $get_data = Part::get();
         return Datatables::of($get_data)
             ->addIndexColumn()
@@ -35,6 +37,8 @@ class PartController extends Controller
 
     public function addUpdate(Request $request , $id = null)
     {
+         $jobCard = JobCard::select('id','customer_name')->get();
+
         if ($request->isMethod('post')) {
             $part = Part::findOrNew($request->update_id);
             $part->part_name = $request->part_name;
