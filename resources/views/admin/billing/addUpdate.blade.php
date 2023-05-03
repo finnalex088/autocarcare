@@ -39,7 +39,7 @@
    <div class="col-md-10 form-group">
       <!-- <label>Part Issue</label> -->
       <label><strong>Select Part :</strong></label><br/>
-      <select  class="form-control category_id" name="part_id[]" data-live-search="true" id="part_id" multiple="multiple">
+      <select  class="form-control category_id" name="partid[]" data-live-search="true" id="part_id" multiple="multiple">
          <option value="" disabled>Selete Part</option>
          @foreach($part as $list)
          <option value="{{$list['id']}}"

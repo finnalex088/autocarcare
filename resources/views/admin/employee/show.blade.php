@@ -1,22 +1,24 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="row">
+    
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2> Show Employee</h2>
+                 
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('employee.index') }}"> Back</a>
             </div>
         </div>
-    </div>
+    
      
     
-        <h2 class="ml-2">car</h2>
+        <h2 class="ml-4">car</h2>
+        
             <div class="col">
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" style="margin:auto;">
                         <tbody>
                             <tr>
                                 <th>Name</th>

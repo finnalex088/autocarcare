@@ -76,10 +76,10 @@
      </div><br>
      <div class="row" style="margin-left:30%">
      
-     <div class="col-sm-9">
+     <!-- <div class="col-sm-9">
      <button type="button" class="btn btn-outline-dark" style=" display: block;margin-left: auto;margin-right:0;color:blue">Auto generate</button>
-     </div>
-     <div class="col-sm-1">
+     </div> -->
+     <div class="col-sm-10">
      <button type="button" class="btn btn-primary" style=" display: block;margin-left: auto;margin-right:0;">Submit</button>
      </div>
      </div><br>

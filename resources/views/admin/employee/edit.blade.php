@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="content-header row">
+
     <div class="content-header-left col-md-9 col-12 mb-2">
         <div class="row breadcrumbs-top">
-            <div class="col-12">
+            <div class="col-12" style="margin-left:20px;">
                 <h2 class="content-header-title float-left mb-0 ml-6">{{__('Employee')}}</h2>
                 <div class="breadcrumb-wrapper">
                     <ol class="breadcrumb">
@@ -15,10 +15,10 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="content-body os_alr_area">
-    <div class="row">
+
+
+   
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
@@ -51,7 +51,7 @@
 
                         <div class="form-group">
                             <label for="">Address</label>
-                            <textarea name="address" id="" cols="30" rows="10" value="{{$employee->address}}" class="form-control">{{$employee->address}}</textarea>
+                            <textarea name="address" id="" cols="10" rows="5" value="{{$employee->address}}" class="form-control">{{$employee->address}}</textarea>
                             @if($errors->has('address'))
                                         <span class="validation_error" style="color:red">{{ $errors->first('address') }}</span>
                                     @endif
@@ -90,14 +90,14 @@
                                     @endif
                         </div>
                                 <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-primary mr-1">Update</button>
-                                    <button type="reset" class="btn btn-outline-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary" style="float:right;margin-bottom:5%">Update</button>
+                                    <!-- <button type="reset" class="btn btn-outline-secondary">Reset</button> -->
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
         </div>
-    </div>
-</div>
+
+
 @endsection

@@ -14,18 +14,18 @@
                 <div class="boxes">
                     <div class="box box1">
                         <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total Employee</span>
+                        <a href="{{route('employee.index')}}"><span class="text">Total Employee</span></a>
                         <span class="number">{{$employee}}</span>
                     </div>
                     <div class="box box2">
                         <i class="uil uil-comments"></i>
-                        <span class="text">Total Jobs</span>
+                        <a href="{{route('job_card.index')}}"><span class="text">Total Jobs</span></a>
                         <span class="number">{{$job}}</span>
                     </div>
                     <div class="box box3">
                         <i class="uil uil-share"></i>
-                        <span class="text">Parts name</span>
-                        <span class="number">{{$part}}</span>
+                       <a href="{{route('partissue.index')}}"> <span class="text">Parts name</span></a>
+                       <span class="number">{{$part}}</span>
                     </div>
                 </div>
             </div>
