@@ -14,7 +14,25 @@
    @csrf
    <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
    <div class="card-body">
-    
+    <div class="col-md-10 form-group">
+      <label>Job id</label>
+      <select class="form-control category_id" name="job_id" data-live-search="true" id="job_id">
+         <option value="">Selete Job</option>
+         @foreach($jobCard as $list)
+         <option value="{{$list['id']}}"
+         <?php 
+         if(!empty($get_data->job_id))
+         {
+            if($get_data->job_id ==$list['id'])
+            {
+                  echo "selected";
+               }
+            }
+         ?>
+         >{{$list['id']}}</option>
+         @endforeach
+      </select>
+         </div>
       <div class="col-md-10 form-group">
          <label>Part No
          <span class="text-danger">*</span></label>

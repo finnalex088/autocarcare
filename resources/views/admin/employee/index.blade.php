@@ -26,6 +26,7 @@
     <table class="table table-bordered yajra-datatable table-hover">
         <thead>
             <tr>
+                 <th>Image</th>
                 <th>Name</th>
                 <th>Designation</th>
                 <th>Action</th>
@@ -45,6 +46,13 @@
         serverSide: true,
         ajax: "{{ route('employee.index') }}",
         columns: [
+              {
+        data: 'image',
+        name: 'image',
+        render: function (data, type, full, meta) {
+            return "<img src='{{ asset('uploads/image') }}/" + data + "' height='50'>";
+        }
+    },
             {data: 'name', name: 'name'},
             {data: 'designation', name: 'designation'},
            {data: 'action', name: 'action', orderable: true, searchable: true},

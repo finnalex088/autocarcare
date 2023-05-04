@@ -17,7 +17,7 @@
       
             <div class="card">
                 
-
+ 
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -25,7 +25,7 @@
                         </div>
                     @endif
                     
-                    <form action="{{route('employee.store')}}" method="post" id="employee_form">
+                    <form action="{{route('employee.store')}}" method="post" id="employee_form" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="">Name</label>
@@ -51,6 +51,14 @@
                                     @endif
 
                         </div>
+                        <div class=" form-group">
+         <label>Upload Image</label>
+         <input type="file" name="image"  class="form-control">
+           @if($errors->has('image'))
+          <span class="validation_error" style="color:red">{{ $errors->first('image') }}</span>
+            @endif
+      </div>
+         
 
                         <div class="form-group">
                             <label for="">Address</label>

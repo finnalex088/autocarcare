@@ -22,7 +22,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <form class="form form-horizontal" method="POST" id="editBlog" action="{{route('employee.update',$employee->id)}}">
+                        <form class="form form-horizontal" method="POST" id="editBlog" action="{{route('employee.update',$employee->id)}}" enctype="multipart/form-data">
 
                             @csrf
                             @method('patch')
@@ -46,6 +46,15 @@
                             <input type="number" name="mobile_no" value="{{$employee->mobile_no}}"  class="form-control">
                             @if($errors->has('mobile_no'))
                             <span class="validation_error" style="color:red">{{ $errors->first('mobile_no') }}</span>
+                            @endif
+                        </div>
+
+                         <div class="form-group">
+                            <label for="">Upload Image</label>
+                            <input type="file" name="image"  class="form-control">
+                            <img src="{{asset('uploads/image/'.$employee->image)}}" width="70px" width="70px" alt="img">
+                            @if($errors->has('image'))
+                            <span class="validation_error" style="color:red">{{ $errors->first('image') }}</span>
                             @endif
                         </div>
 

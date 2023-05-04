@@ -110,14 +110,16 @@
         <option @isset($get_data->id) @if($get_data->work_type == "Running Repair") selected @endif  @endisset value="Running Repair">Running Repair</option>
         <option @isset($get_data->id) @if($get_data->work_type == "Body-shop") selected @endif  @endisset value="Body-shop">Body-shop</option>
       <option @isset($get_data->id) @if($get_data->work_type == "Insurance") selected @endif  @endisset value="Insurance">Insurance</option>
+       <option @isset($get_data->id) @if($get_data->work_type == "Service") selected @endif  @endisset value="Service">Service</option>
       </select>
    </div>
 <div class="col-md-5 form-group">
-         <label>Estimate
+         <label>Estimate</label>
          <span class="text-danger">*</span></label>
          <input type="text" name="estimate" class="form-control" value="{{ isset($get_data->estimate) ? $get_data->estimate : old('estimate')}}" placeholder="Enter Estimate" />
       </div>
          </div>
+
 
          <div class="row">
             <div class="col-md-6">

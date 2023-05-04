@@ -37,6 +37,12 @@
                              <tr>
                                 <th>Mobile No</th>
                                 <td>
+                                    <img src="{{asset('uploads/image/'.$employee->image)}}" width="70px" width="70px" alt="img"> 
+                                </td>
+                            </tr>
+                               <tr>
+                                <th>Image</th>
+                                <td>
                                     {{ $employee->mobile_no }}
                                 </td>
                             </tr>

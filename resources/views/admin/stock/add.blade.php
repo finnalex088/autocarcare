@@ -55,13 +55,7 @@
      <label>Tax</label>
      <input type="text" class="form-control" id="tax" name="tax"   placeholder="Tax">
      </div>
-     <div class="col-sm-6">
-     <label>Profit Margin</label>
-     <input type="text"  class="form-control" id="ProfitMargin" name="profit_margin"  placeholder="Profit Margin">
-     </div>
-     </div><br>
-     <div class="row">
-     <div class="col-sm-6">
+    <div class="col-sm-6">
      <label> UNT</label>
      <select id="unt" name="UNT" class="form-control">
          <option value="">Selete UNT</option>
@@ -70,23 +64,24 @@
       <option @isset($get_data->id) @if($get_data->UNT == "B") selected @endif  @endisset value="B">B</option>
       </select>
      </div>
+     </div><br>
+     <div class="row">
+       <div class="col-sm-6">
+     <label>Stock Quantity</label>
+     <input type="number" class="form-control" id="lowStockQuantity" name="low_stock_quantity"   placeholder="Stock Quantity">
+     </div>
      <div class="col-sm-6">
      <label>Location</label>
      <input type="text"  class="form-control" id="location" name="location"  placeholder="Location">
      </div>
      </div><br>
      <div class="row">
-     <div class="col-sm-6">
-     <label>Stock Quantity</label>
-     <input type="number" class="form-control" id="lowStockQuantity" name="low_stock_quantity"   placeholder="Stock Quantity">
-     </div>
+   
      <div class="col-sm-6">
      <label>HSN Code</label>
      <input type="text"  class="form-control" id="hsnCode" name="HSN_code"  placeholder="HSN Code">
      </div>
-     </div><br>
-     <div class="row">
-     <div class="col-sm-12">
+     <div class="col-sm-6">
      <label>Description</label>
      <input type="text"  class="form-control" id="description" name="description" value="{{ isset($get_data->description) ? $get_data->description : old('description')}}" placeholder="Description">
      </div>

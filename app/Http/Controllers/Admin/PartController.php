@@ -41,6 +41,7 @@ class PartController extends Controller
 
         if ($request->isMethod('post')) {
             $part = Part::findOrNew($request->update_id);
+            $part->job_id   = $request->job_id;
             $part->part_name = $request->part_name;
             $part->part_no  = $request->part_no;
             $part->part_quantity  = $request->part_quantity;
@@ -56,9 +57,9 @@ class PartController extends Controller
             $get_data = '';
             if($id){
                 $get_data =  Part::findOrFail($id);
-                return view('admin.partissue.addupdate')->with(compact('get_data'));
+                return view('admin.partissue.addupdate')->with(compact('get_data','jobCard'));
             } else {
-                return view('admin.partissue.addupdate')->with(compact('get_data'));
+                return view('admin.partissue.addupdate')->with(compact('get_data','jobCard'));
             }
         } 
     }
