@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\BillingController;
 
 use App\Http\Controllers\Admin\stockController;
 use App\Http\Controllers\Admin\spareCategoryController;
+use App\Http\Controllers\Admin\PDFController;
 
 
 
@@ -24,10 +25,10 @@ use App\Http\Controllers\Admin\spareCategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
+
 
 Auth::routes();
 
@@ -61,7 +62,8 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 
     Route::any('billing', [BillingController::class,'index'])->name('billing.index');
     Route::any('billing/addUpdate/{id?}', [BillingController::class,'addUpdate'])->name('billing.addUpdate');
-     Route::any('billing/delete/{id?}', [BillingController::class,'delete'])->name('billing.delete');
+    Route::any('billing/delete/{id?}', [BillingController::class,'delete'])->name('billing.delete');
+    Route::any('billing/generatepdf', [BillingController::class,'generatepdf'])->name('billing.generatepdf');
 
       /*----------------------------------stock Module--------------------------------------------------*/
 
@@ -77,7 +79,11 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
 
      Route::any('spareCategory', [spareCategoryController::class,'index'])->name('spareCategory.index');
      Route::any('spareCategory/addUpdate/{id?}', [spareCategoryController::class,'addUpdate'])->name('spareCategory.addUpdate');
-      Route::any('spareCategory/delete/{id?}', [spareCategoryController::class,'delete'])->name('spareCategory.delete');
+     Route::any('spareCategory/delete/{id?}', [spareCategoryController::class,'delete'])->name('spareCategory.delete');
+
+        /*----------------------------------GEnerate PDF Module--------------------------------------------------*/
+        // Route::get('show', [PDFController::class,'show']);
+    // Route::get('pdf', [PDFController::class,'generatepdf'])->name('pdf.generatepdf');
 });
 
 

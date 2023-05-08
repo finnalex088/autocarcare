@@ -6,7 +6,7 @@
      <div class="card-toolbar">
                <!--begin::Button-->
                <a href="{{route('billing.addUpdate')}}" class="btn btn-primary font-weight-bolder" style="float:right;margin-right:25px"> Add Billing List</a>
-               <!--end::Button-->
+                           <!--end::Button-->
             </div>
             @if (count($errors) > 0)
          @foreach ($errors->all() as $error)
