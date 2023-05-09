@@ -63,7 +63,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::any('billing', [BillingController::class,'index'])->name('billing.index');
     Route::any('billing/addUpdate/{id?}', [BillingController::class,'addUpdate'])->name('billing.addUpdate');
     Route::any('billing/delete/{id?}', [BillingController::class,'delete'])->name('billing.delete');
-    Route::any('billing/generatepdf', [BillingController::class,'generatepdf'])->name('billing.generatepdf');
+    Route::any('billing/generatepdf/{id}', [BillingController::class,'generatepdf'])->name('billing.generatepdf');
 
       /*----------------------------------stock Module--------------------------------------------------*/
 

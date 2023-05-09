@@ -25,11 +25,11 @@ class BillingController extends Controller
             ->addColumn('action', function($data){    
              $delete_url = route('billing.delete',['id'=>$data->id]);
              $url_edit = route('billing.addUpdate',['id'=>$data->id]);
-             $pdf_generate= route('billing.generatepdf');
+             $pdf_generate= route('billing.generatepdf',['id'=>$data->id]);
             
              $button = '<a href="'.$url_edit.'" id="'.$data->id.'" class="edit btn btn-success btn-sm"> <i class="fa fa-edit"></i> </a>&nbsp;';
              $button .= '<a  name="delete" class="delete btn btn-danger" onclick="return confirm(\'Are You Sure Want to Delete?\')" href="'.$delete_url.'" id=" '.$data->id.' "class="delete"><i class="fa fa-trash"></i> </a>';
-              $button .= '<a href="'.$pdf_generate.'"  class="pdf btn btn-success btn-sm"> Download PDF </a>&nbsp;';
+              $button .= '<a href="'.$pdf_generate.'" id="'.$data->id.'" class="pdf btn btn-success btn-sm"> Download PDF </a>&nbsp;';
              // $button .= '<a  name="pdf" class="pdf btn btn-danger" onclick="return confirm(\'Are You Sure Want to Download PDF?\')" href="'.$url_PDFgenerate.'" id=" '.$data->id.' "class="pdf">Download PDF </a>';
              return $button;
          })
@@ -80,15 +80,25 @@ public function addUpdate(Request $request , $id = null)
         $billing->delete();
         return redirect()->route('billing.index')->with('success', 'Billing Deleted Successfully!.');
     }
-    public function generatepdf()
-   {
-        $data=[
-            'title'=>'welcome',
-            'date'=>date('m/d/y')
-                ];
-         $pdf=PDF::loadView('pdf',$data);
-         return $pdf->download('bill.pdf');
+//     public function generatepdf()
+//    {
+//         $data=[
+//             'title'=>'welcome',
+//             'date'=>date('m/d/y')
+//                 ];
+//          $pdf=PDF::loadView('pdf',$data);
+//          return $pdf->download('bill.pdf');
 
-    }
+//     }
 
+   public function generatepdf(Request $request, $id)
+{
+    $billing = Billing::find($id);
+    $data = [
+        'job_id' => $billing->job_id,
+        'amount' => $billing->amount
+    ];
+    $pdf = PDF::loadView('pdf', $data);
+    return $pdf->download('bill.pdf');
+}
 }
