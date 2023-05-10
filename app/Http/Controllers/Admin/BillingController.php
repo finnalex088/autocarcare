@@ -98,6 +98,7 @@ public function addUpdate(Request $request , $id = null)
         'job_id' => $billing->job_id,
         'amount' => $billing->amount
     ];
+    
     $pdf = PDF::loadView('pdf', $data);
     return $pdf->download('bill.pdf');
 }

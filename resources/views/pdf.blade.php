@@ -7,6 +7,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js">
     <title>Document</title>
 <head>
+<style>
+  @page {
+            margin: 0;
+            padding:0;
+        }
+table tr td{
+  text-align:left;
+}
+table tr th{
+  text-align:left;
+}
+</style>
 </head>
 
 <body>
@@ -15,10 +27,10 @@
 <table>
 <tbody>
 <tr>
-<td style="background-color:red" >
-<img src="logo.jpg" height="auto" width="100px">
+<td style="" >
+<img src="{{public_path('image/logo.jpg') }}" height="auto" width="100px">
 </td>
-<td style="padding-left:80px;background-color:red">
+<td style="padding-left:100px;font-size:12px">
 <h3 style="text-align:center">SHREE RAM AUTOMOBILES</h3>
       <p style="text-align:center">(Bosch Multi-Brand Car Solutions)</p>
       <p style="text-align:center">D-8, SECTOR-80, NOIDA, Gautam Buddha Nagar, Uttar Pradesh, 201306</p>
@@ -31,8 +43,8 @@
 <table>
 <tbody>
 <tr>
-<td style="background-color:red;padding-left:340px" ><h3>Tax Invoice</h3></td>
-<td style="background-color:red;padding-left:40px" ><p>CIN:abc<br>GST No. : 09CPSPD9059P1ZR</p></td>
+<td style="padding-left:340px" ><h3>Tax Invoice</h3></td>
+<td style="padding-left:80px;font-size:12px;" ><p>CIN:abc<br>GST No. : 09CPSPD9059P1ZR</p></td>
 </tr>
 </tbody>
 </table>
@@ -40,22 +52,28 @@
 
 
 
-  <table style="font-size:10px;">
+  <table style="font-size:15px;">
     <tbody>
     <tr>
     
     <td>   
-        <tr style="background-color:yellow"><th>Bill No:</th><td>20-21/8075000191</td></tr>
-        <tr style="background-color:yellow"><th>Customer ID:</th><td>171809</td></tr>
-        <tr style="background-color:yellow"><th>Customer Name:</th><td>Mr Neeraj Agrawal</td></tr>
-        <tr style="background-color:yellow"><th>Customer Address:</th><td>SAYA ZION SOCIETY GAURCITY -1 NOIDA EXT</td></tr>
+        <tr ><th style="text-align:left">Bill No</th><td>:</td><td style="padding-left:100px;">20-21/8075000191</td></tr>
+        <tr ><th style="text-align:left">Customer ID</th><td>:</td><td style="padding-left:100px;">171809</td></tr>
+        <tr ><th style="text-align:left">Customer Name</th><td>:</td><td style="padding-left:100px;">Mr Neeraj Agrawal</td></tr>
+        <tr ><th style="text-align:left">Customer Address</th><td>:</td><td style="padding-left:100px;">SAYA ZION SOCIETY GAURCITY -1 NOIDA EXT</td></tr>
         </td>
        
         <td>
-        <tr style="background-color:yellow"><th>Bill No:</th><td>20-21/8075000191</td></tr>
-        <tr style="background-color:yellow"><th>Customer ID:</th><td>171809</td></tr>
-        <tr style="background-color:yellow"><th>Customer Name:</th><td>Mr Neeraj Agrawal</td></tr>
-        <tr style="background-color:yellow"><th>Customer Address:</th><td>SAYA ZION SOCIETY GAURCITY -1 NOIDA EXT</td></tr>
+        <tr><th style="text-align:left">Bill Date</th><td>:</td><td style="padding-left:100px;">28/11/2020, 2:44PM</td></tr>
+        <tr><th style="text-align:left">Reg. No.</th><td>:</td><td style="padding-left:100px;">UP78BL2393</td></tr>
+        <tr ><th style="text-align:left">Job No.</th><td>:</td><td style="padding-left:100px;">6075000197</td></tr>
+        <tr ><th style="text-align:left">Job. Date</th><td>:</td><td style="padding-left:100px;">6075000197</td></tr>
+         <tr ><th style="text-align:left">Model</th><td>:</td><td style="padding-left:100px;">City (ZX)</td></tr>
+          <tr ><th style="text-align:left">VIN NO.</th><td>:</td><td style="padding-left:100px;">123</td></tr>
+           <tr ><th style="text-align:left">Service Type</th><td>:</td><td style="padding-left:100px;">Service</td></tr>
+            <tr ><th style="text-align:left">Policy No</th><td>:</td><td style="padding-left:100px;"></td></tr>
+             <tr ><th style="text-align:left">Claim No</th><td>:</td><td style="padding-left:100px;"></td></tr>
+              <tr ><th style="text-align:left">Mileage</th><td>:</td><td style="padding-left:100px;">83910</td></tr>
         </td>
         </tr>
     </tbody>
@@ -64,20 +82,17 @@
 <table  style="font-size:12px; border-spacing: 20px;">
 <thead style="border-top:1px solid black;border-bottom:1px solid black;">
   <tr>
- 
-    <th >Sr. No.</th>
-    <th>Part Description</th>
-    <th>UOM</th>
-    <th>HSN/SAC
-Code</th>
+ <th style="text-align:left">Sr. No.</th>
+    <th style="text-align:left">Part Description</th>
+    <th style="text-align:left">UOM</th>
+    <th style="text-align:left">HSN/SACCode</th >
      <th>MRP</th>
-      <th>Tax %</th>
-       <th>Qty.</th>
-        <th>Rate</th>
-         <th>Taxable Amt</th>
-          <th>Taxable 
-Labor Amt. </th>
-  </tr>
+      <th style="text-align:left">Tax %</th>
+       <th style="text-align:left">Qty.</th>
+        <th style="text-align:left">Rate</th>
+         <th style="text-align:left">Taxable Amt</th>
+          <th style="text-align:left">Taxable Labor Amt. </th>
+           </tr>
   </thead>
     <h3>Parts</h3>
   <tr>
@@ -100,12 +115,135 @@ Labor Amt. </th>
     <td>2710</td>
     <td>1367.98 </td>
     <td>18</td>
-    
-   
-  </tr>
-
-
+    </tr>
 </table>
+
+<table  style="font-size:12px; border-spacing: 28px;">
+<thead  style="border-top:1px solid black;border-bottom:1px solid black;">
+  <tr>
+    <th style="text-align:left">GST %</th>
+    <th style="text-align:left">Amount</th>
+    <th style="text-align:left">Discount</th>
+    <th style="text-align:left">Taxable Amt</th>
+    <th style="text-align:left">SGST</th>
+    <th style="text-align:left">CGST</th>
+    <th style="text-align:left">CGST</th>
+    <th style="text-align:left">Sub Total</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>GST@ 28% on Parts</td>
+    <td> 3258.59 </td>
+    <td></td>
+    <td>3258.59</td>
+    <td>456.00</td>
+    <td>456.00 </td>
+    <td></td>
+    <td>4170.59 </td>
+    </tr>
+   <tr>
+    <td>GST@ 28% on Parts</td>
+    <td> 3258.59 </td>
+    <td></td>
+    <td>3258.59</td>
+    <td>456.00</td>
+    <td>456.00 </td>
+    <td></td>
+    <td>4170.59 </td>
+    </tr>
+  <tbody>
+ <tfoot  style="border-bottom:1px solid black;">
+            <tr>
+                <th style="text-align:left" colspan="7">Total Parts Amount</th>
+                <td style="text-align:right">₹160</td>
+            </tr>
+        </tfoot>
+ <tbody  style="border-bottom:1px solid black;">
+  <tr>
+    <td>GST@ 28% on Parts</td>
+    <td> 3258.59 </td>
+    <td></td>
+    <td>3258.59</td>
+    <td>456.00</td>
+    <td>456.00 </td>
+    <td></td>
+    <td>4170.59 </td>
+    
+  </tr>
+  </tbody>     
+</table>
+
+<table>
+<thead style="border-bottom:1px solid black;">
+<tr>
+<th style="width:430px;"></th>
+<th style="font-size:13px">Net Bill Amount (Rounded off) : 8015.00</th>
+</tr>
+
+</thead>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td><tr><p style="font-size:12px;">Amt. in words : Rupees Eight Thousand Fifteen Only </p></tr></td>
+</tr>
+<tr>
+<td style="width:430px;"></td>
+<td style="font-size:12px">ALL DISPUTES SUBJECT TO JURISDICTION</td>
+</tr>
+<tr>
+<td style="width:430px;"></td>
+<td style="font-size:12px">FOR SHREE RAM AUTOMOBILES</td>
+</tr>
+<tr>
+<td><p style="font-size:13px">Bank : Kotak Mahindra Bank <br>Ac : 4145130332<br>Ac : IFSC : KKBK0005030 <br>IFSC : KKBK00050301</p>
+
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td style="width:520px;">
+</td>
+<td>
+<p style="font-size:13px;">Authorised Signatory</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table>
+<tbody>
+<tr>
+<td>
+<p>
+<spam style="font-size:14px;font-weight:bold;"><u>Remark:-</u></spam>
+<spam style="font-size:13px;">suspencion arm,link rod,jr 
+bush,rear shocker,frnt or rear rhs wheel 
+bearing,rhs engine mounting,ac adjuster noise 
+inform to customer</spam>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<tbody>
+<tr>
+<td style="width:520px;">
+</td>
+<td>
+<p style="font-size:13px;">Customer Signature</p>
+</td>
+</tr>
+</tbody>
+</table>
+
     <h1>{{$job_id}}</h1>
      <h1>{{$amount}}</h1>
 </body>
