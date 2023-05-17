@@ -73,7 +73,14 @@
          <option value="percentage">percentege</option>
       </select>
          </div>
-
+<div class="labour field_wrapper col-md-10 form-group " id="labour" >
+         <label>Select Labour Types</label>
+      <input type="text" class="form-control labour1" name="field_name[]" id="labour1" value="" />
+      <a href="javascript:void(0);" class="add_button"  title="add field">
+         <i class="fa fa-plus" style="color:black"></i>
+         </a>
+   
+</div>
          
     <div class="col-md-10 form-group fix_price" id="fix_price" >
          
@@ -171,6 +178,9 @@
   element.classList.remove("fix_price");
   var element1 = document.getElementById("total_amount");
   element1.classList.remove("total_amount");
+  var ele = document.getElementById("labour");
+  ele.classList.remove("labour");
+
   var element = document.getElementById("percentage");
   element.classList.add("percentage");
   var element1 = document.getElementById("total_amount1");
@@ -183,6 +193,8 @@
   element.classList.remove("percentage");
   var element1 = document.getElementById("total_amount1");
   element1.classList.remove("total_amount1");
+var ele = document.getElementById("labour");
+  ele.classList.remove("labour");
 
   var element = document.getElementById("fix_price");
   element.classList.add("fix_price");
@@ -223,7 +235,36 @@
 //    document.getElementById("total1").value=total1;
 // }
 
- 
+ $(document).ready(function(){
+    var maxField = 10; //Input fields increment limitation
+    var addButton = $('.add_button'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper
+    var fieldHTML = '<div><input type="text" class="form-control" name="field_name[]" value=""/> <a href="javascript:void(0);" class="add_button1" title="Add field"><i class="fa fa-plus"></i></a><a href="javascript:void(0);" class="remove_button"> <i class="fa fa-minus"></i></a></div>'; //New input field html 
+    var x = 1; //Initial field counter is 1
+    
+    //Once add button is clicked
+    $(addButton).click(function(){
+        //Check maximum number of input fields
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML); //Add field html
+        }
+    });
+	
+	
+	  $(wrapper).on('click', '.add_button1', function(e){
+        e.preventDefault();
+         $(wrapper).append(fieldHTML);  
+        x++; 
+    });
+    
+    //Once remove button is clicked
+    $(wrapper).on('click', '.remove_button', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
+});
 
  
 </script>

@@ -60,8 +60,8 @@
      <select id="unt" name="UNT" class="form-control">
          <option value="">Selete UNT</option>
          
-        <option @isset($get_data->id) @if($get_data->UNT == "A") selected @endif  @endisset value="A">A</option>
-      <option @isset($get_data->id) @if($get_data->UNT == "B") selected @endif  @endisset value="B">B</option>
+        <option @isset($get_data->id) @if($get_data->UNT == "LTR") selected @endif  @endisset value="LTR">LTR</option>
+      <option @isset($get_data->id) @if($get_data->UNT == "PCS") selected @endif  @endisset value="PCS">PCS</option>
       </select>
      </div>
      </div><br>

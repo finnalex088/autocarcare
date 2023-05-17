@@ -301,6 +301,7 @@ form{
   display:none;
 }
 
+
 .dashboard .dash-content{
   padding-top: 50px;
 }
@@ -384,6 +385,22 @@ form{
   margin-left:5%;
 }
 
-.error {
-  color: #FF0000;
+.fix_price{
+  display:none;
+}
+.percentage{
+  display:none;
+}
+.total_amount{
+  display:none;
+}
+.total_amount1 {
+  display: none;
+}
+
+.labour{
+  display: none;
+}
+.alert-success{
+  margin-top: 5%;
 }

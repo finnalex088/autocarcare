@@ -48,15 +48,19 @@ public function addUpdate(Request $request , $id = null)
         $jobCard = JobCard::select('id','customer_name')->get();
         $part = Part::select('id','part_name')->get();
         if ($request->isMethod('post')) {
+              $fieldNames = $request->input('field_name');
+               foreach ($fieldNames as $fieldName) {
             $partid = $request->partid;
             $data = json_encode($partid);
             $billing = Billing::findOrNew($request->update_id);
+            $billing->labour_types = $fieldName;
             $billing->job_id   = $request->job_id;
             $billing->partid   = $data;
             $billing->amount  = $request->amount;
             $billing->fix_total_amount  = $request->fix_total_amount;
             $billing->percentage_total_amount = $request->percentage_total_amount;
             $billing->save();
+               }
              if($billing){
                 $add_update_message = empty($request->update_id) ? 'Billing Added Successfully.!' : 'Billing Updated Successfully.!';
                 return redirect()->route('billing.index')->with('success', $add_update_message);
@@ -94,12 +98,31 @@ public function addUpdate(Request $request , $id = null)
    public function generatepdf(Request $request, $id)
 {
     $billing = Billing::find($id);
+     
+    $jobCard = JobCard::where('id', $billing->job_id)->first();
+    $part = Part::where('id', $billing->job_id)->first();
     $data = [
         'job_id' => $billing->job_id,
-        'amount' => $billing->amount
+        'amount' => $billing->amount,
+        'customer_name' =>$jobCard->customer_name,
+        'address' =>$jobCard->address,
+        'id' =>$jobCard->id,
+        'model_id' =>$jobCard->model_id,
+        'created_at'=>$jobCard->created_at,
+        'registration_number' =>$jobCard->registration_number,
+        'part_name'=>$part->part_name,
     ];
     
     $pdf = PDF::loadView('pdf', $data);
     return $pdf->download('bill.pdf');
 }
+
+
+
+
+
+
+
+
+
 }

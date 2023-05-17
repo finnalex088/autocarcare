@@ -58,17 +58,17 @@ table tr th{
     
     <td>   
         <tr ><th style="text-align:left">Bill No</th><td>:</td><td style="padding-left:100px;">20-21/8075000191</td></tr>
-        <tr ><th style="text-align:left">Customer ID</th><td>:</td><td style="padding-left:100px;">171809</td></tr>
-        <tr ><th style="text-align:left">Customer Name</th><td>:</td><td style="padding-left:100px;">Mr Neeraj Agrawal</td></tr>
-        <tr ><th style="text-align:left">Customer Address</th><td>:</td><td style="padding-left:100px;">SAYA ZION SOCIETY GAURCITY -1 NOIDA EXT</td></tr>
+        <tr ><th style="text-align:left">Customer ID</th><td>:</td><td style="padding-left:100px;">{{$id}}</td></tr>
+        <tr ><th style="text-align:left">Customer Name</th><td>:</td><td style="padding-left:100px;">{{$customer_name}}</td></tr>
+        <tr ><th style="text-align:left">Customer Address</th><td>:</td><td style="padding-left:100px;">{{$address}}</td></tr>
         </td>
        
         <td>
-        <tr><th style="text-align:left">Bill Date</th><td>:</td><td style="padding-left:100px;">28/11/2020, 2:44PM</td></tr>
-        <tr><th style="text-align:left">Reg. No.</th><td>:</td><td style="padding-left:100px;">UP78BL2393</td></tr>
+        <tr><th style="text-align:left">Bill Date</th><td>:</td><td style="padding-left:100px;">{{$created_at}}</td></tr>
+        <tr><th style="text-align:left">Reg. No.</th><td>:</td><td style="padding-left:100px;">{{$registration_number}}</td></tr>
         <tr ><th style="text-align:left">Job No.</th><td>:</td><td style="padding-left:100px;">6075000197</td></tr>
-        <tr ><th style="text-align:left">Job. Date</th><td>:</td><td style="padding-left:100px;">6075000197</td></tr>
-         <tr ><th style="text-align:left">Model</th><td>:</td><td style="padding-left:100px;">City (ZX)</td></tr>
+        <tr ><th style="text-align:left">Job. Date</th><td>:</td><td style="padding-left:100px;">{{$created_at}}</td></tr>
+         <tr ><th style="text-align:left">Model</th><td>:</td><td style="padding-left:100px;">{{$model_id}}</td></tr>
           <tr ><th style="text-align:left">VIN NO.</th><td>:</td><td style="padding-left:100px;">123</td></tr>
            <tr ><th style="text-align:left">Service Type</th><td>:</td><td style="padding-left:100px;">Service</td></tr>
             <tr ><th style="text-align:left">Policy No</th><td>:</td><td style="padding-left:100px;"></td></tr>
@@ -97,7 +97,7 @@ table tr th{
     <h3>Parts</h3>
   <tr>
     <td>1</td>
-    <td> ENGINE OIL</td>
+    <td> {{$part_name}}</td>
     <td>LTR</td>
     <td>2710</td>
     <td>1367.98 </td>
