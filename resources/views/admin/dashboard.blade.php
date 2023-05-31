@@ -6,10 +6,20 @@
 
         <div class="dash-content">
             <div class="overview">
+                <div>
                 <div class="title">
+                    <div style="display:flex">
                     <i class="uil uil-tachometer-fast-alt"></i>
                     <span class="text">Dashboard</span>
+                   </div>
+                   <div class="dropdown user">
+                    <button class="dropbtn">Welcome, {{ auth()->user()->name }}</button>
+                    <div class="dropdown-content">
+                    <a href="{{route('userAddUpdate', ['id' => auth()->user()->id])}}">Profile</a>
+                    </div>
                 </div>
+                </div>
+            </div>
 
                 <div class="boxes">
                     <div class="box box1">

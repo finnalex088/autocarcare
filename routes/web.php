@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\BillingController;
 use App\Http\Controllers\Admin\stockController;
 use App\Http\Controllers\Admin\spareCategoryController;
 use App\Http\Controllers\Admin\PDFController;
+use App\Http\Controllers\Admin\userController;
 
 
 
@@ -31,7 +32,8 @@ Route::get('/', function () {
 
 
 Auth::routes();
-
+Route::get('/userAddUpdate', [userController::class, 'edit'])->name('userAddUpdate');
+Route::post('/profile/update', [userController::class, 'update'])->name('profile.update');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
@@ -63,7 +65,7 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function 
     Route::any('billing', [BillingController::class,'index'])->name('billing.index');
     Route::any('billing/addUpdate/{id?}', [BillingController::class,'addUpdate'])->name('billing.addUpdate');
     Route::any('billing/delete/{id?}', [BillingController::class,'delete'])->name('billing.delete');
-    Route::any('billing/generatepdf/{id}', [BillingController::class,'generatepdf'])->name('billing.generatepdf');
+    Route::any('billing/generatepdf/{id?}', [BillingController::class,'generatepdf'])->name('billing.generatepdf');
 
       /*----------------------------------stock Module--------------------------------------------------*/
 

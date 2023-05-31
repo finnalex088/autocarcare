@@ -2,6 +2,11 @@
 <html>
 <head>
    @include('layouts.admin.header')
+   @auth
+            <!-- Show user information -->
+            
+       
+        @endauth
 </head>  
  
     <body>

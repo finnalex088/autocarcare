@@ -8,6 +8,7 @@ use Yajra\DataTables\DataTables;
 use App\Models\Admin\Billing;
 use App\Models\Admin\Part;
 use App\Models\Admin\JobCard;
+use App\Models\Admin\Insurance;
 use PDF;
 
 
@@ -16,11 +17,13 @@ class BillingController extends Controller
     public function index(Request $request)
     {
         
-     
+      
         if($request->ajax()){
-        $get_data = Billing::with(['getjob']);
-        
-        return Datatables::of($get_data)
+        // $get_data = Billing::with(['getjob']);
+          $billings = Billing::pluck('job_id');
+        $jobCard = JobCard::whereIn('id', $billings)->select('id', 'customer_name')->get();
+
+        return DataTables::of($jobCard)
             ->addIndexColumn()
             ->addColumn('action', function($data){    
              $delete_url = route('billing.delete',['id'=>$data->id]);
@@ -78,9 +81,10 @@ public function addUpdate(Request $request , $id = null)
         } 
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Request $request, $job_id)
     {
-        $billing=Billing::find($id);
+        $billing = Billing::where('job_id', $job_id)->first();
+      
         $billing->delete();
         return redirect()->route('billing.index')->with('success', 'Billing Deleted Successfully!.');
     }
@@ -95,12 +99,19 @@ public function addUpdate(Request $request , $id = null)
 
 //     }
 
-   public function generatepdf(Request $request, $id)
+   public function generatepdf(Request $request, $job_id)
 {
-    $billing = Billing::find($id);
+  
+    $billing = Billing::where('job_id', $job_id)->first();
+
+    if (!$billing) {
+      
+        return redirect()->back()->with('error', 'Billing record not found for the given job ID');
+    }
      
     $jobCard = JobCard::where('id', $billing->job_id)->first();
     $part = Part::where('id', $billing->job_id)->first();
+     $insurance = Insurance::where('job_id', $billing->job_id)->first();
     $data = [
         'job_id' => $billing->job_id,
         'amount' => $billing->amount,
@@ -111,6 +122,11 @@ public function addUpdate(Request $request , $id = null)
         'created_at'=>$jobCard->created_at,
         'registration_number' =>$jobCard->registration_number,
         'part_name'=>$part->part_name,
+        'VIN_No' =>$jobCard->VIN_No,
+        'policy_no' =>$jobCard->policy_no,
+        'claim_no' =>$jobCard->claim_no,
+        'mileage' =>$jobCard->mileage,
+        'work_type'=>$jobCard->work_type
     ];
     
     $pdf = PDF::loadView('pdf', $data);

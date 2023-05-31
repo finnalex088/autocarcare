@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Admin\JobCard;
 use App\Models\Admin\CarMake;
+use App\Models\Admin\Stock;
 use App\Models\Admin\CarModel;
 use Storage;
 
@@ -37,7 +38,7 @@ class JobCardController extends Controller
 
     public function addUpdate(Request $request , $id = null)
     {
-        
+         $stock = Stock::select('id')->get();
         $CarMake = CarMake::select('id','name')->get();
         if ($request->isMethod('post')) {
             // $img = $request->image;
@@ -55,6 +56,7 @@ class JobCardController extends Controller
            
             $job_card = JobCard::findOrNew($request->update_id);
             $job_card->registration_number = $request->registration_number;
+             $job_card->spare_category_id  = $request->spare_category_id;
             $job_card->make_id  = $request->make_id;
             $job_card->model_id  = $request->model_id;
             $job_card->customer_name = $request->customer_name;
@@ -67,6 +69,10 @@ class JobCardController extends Controller
             $job_card->fuel_level = $request->fuel_level;
             $job_card->work_type = $request->work_type;
             $job_card->estimate = $request->estimate;
+            $job_card->VIN_No = $request->VIN_No;
+            $job_card->policy_no = $request->policy_no;
+             $job_card->claim_no = $request->claim_no;
+            $job_card->mileage = $request->mileage;
             // $job_card->image_id = $fileName;
             
             $job_card->save();
@@ -80,9 +86,9 @@ class JobCardController extends Controller
             $get_data = '';
             if($id){
                 $get_data =  JobCard::findOrFail($id);
-                return view('admin.job_card.addUpdate')->with(compact('get_data','CarMake'));
+                return view('admin.job_card.addUpdate')->with(compact('get_data','CarMake','stock'));
             } else {
-                return view('admin.job_card.addUpdate')->with(compact('get_data','CarMake'));
+                return view('admin.job_card.addUpdate')->with(compact('get_data','CarMake','stock'));
             }
         } 
     }

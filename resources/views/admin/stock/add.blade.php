@@ -1,7 +1,7 @@
 
 @extends('layouts.admin')
 @section('content')
-<div class="col-sm-9">
+<div class="col-sm-9" style="margin-left:12%">
       
       <form action="{{ route('stock.add')}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">
       @csrf
@@ -94,7 +94,7 @@
      </div><br>
      
      <div class="card-footer">
-      <button type="submit" class="btn btn-primary mr-2" id="submit">Submit</button>
+      <button type="submit" class="btn btn-primary mr-2" id="submit" style="float:right;margin-bottom:2%">Submit</button>
    </div>
      
      

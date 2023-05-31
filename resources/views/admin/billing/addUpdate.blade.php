@@ -8,7 +8,7 @@
 <!--begin::Card-->
 <div class="card card-custom gutter-b example example-compact">
 <div class="card-header">
-   <h3 class="card-title">Add Job Card</h3>
+   <h3 class="card-title">Add Bill</h3>
 </div>
 <!--begin::Form-->
 <form action="{{ route('billing.addUpdate')}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">

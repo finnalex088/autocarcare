@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use App\Models\Admin\Insurance;
+use App\Models\Admin\JobCard;
 
 
 class InsuranceController extends Controller
@@ -35,9 +36,11 @@ class InsuranceController extends Controller
 
     public function addUpdate(Request $request , $id = null)
     {
+        $jobCard = JobCard::select('id','customer_name')->get();
         if ($request->isMethod('post')) {
             $insurance = Insurance::findOrNew($request->update_id);
             $insurance->company_name = $request->company_name;
+             $insurance->job_id   = $request->job_id;
             $insurance->insurance_type  = $request->insurance_type;
             $insurance->insurance_period  = $request->insurance_period;
             $insurance->job_id = $request->job_id;
@@ -52,9 +55,9 @@ class InsuranceController extends Controller
             $get_data = '';
             if($id){
                 $get_data =  Insurance::findOrFail($id);
-                return view('admin.insurance.addUpdate')->with(compact('get_data'));
+                return view('admin.insurance.addUpdate')->with(compact('get_data','jobCard'));
             } else {
-                return view('admin.insurance.addUpdate')->with(compact('get_data'));
+                return view('admin.insurance.addUpdate')->with(compact('get_data','jobCard'));
             }
         } 
     }

@@ -10,6 +10,16 @@
    @csrf
    <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
    <div class="card-body">
+     <div class="row">
+      <div class="col-sm-10 form-group">
+      <label>Spare category</label>
+        <select class="form-control spare_category_id" name="spare_category_id" data-live-search="true" id="spare_category_id">
+       <option value="">Selete spare_category_id</option>
+       @foreach($stock as $list)
+         <option value="{{$list['id']}}">{{$list['id']}}</option>
+         @endforeach
+      </select>
+         </div>
       <div class="row">
       <div class="col-md-5 form-group">
          <label>Registration Number
@@ -117,6 +127,33 @@
          <label>Estimate</label>
          <span class="text-danger">*</span></label>
          <input type="text" name="estimate" class="form-control" value="{{ isset($get_data->estimate) ? $get_data->estimate : old('estimate')}}" placeholder="Enter Estimate" />
+      </div>
+         </div>
+
+
+           <div class="row">
+   <div class="col-md-5 form-group">
+      <label>VIN No:</label>
+      <span class="text-danger">*</span></label>
+         <input type="text" name="VIN_No" class="form-control" value="{{ isset($get_data->VIN_No) ? $get_data->VIN_No : old('VIN_No')}}" placeholder="Enter VIN No" />
+   </div>
+<div class="col-md-5 form-group">
+         <label>Policy No</label>
+         <span class="text-danger">*</span></label>
+         <input type="text" name="policy_no" class="form-control" value="{{ isset($get_data->policy_no) ? $get_data->policy_no : old('policy_no')}}" placeholder="Enter Policy No" />
+      </div>
+         </div>
+
+           <div class="row">
+   <div class="col-md-5 form-group">
+      <label>Claim No:</label>
+      <span class="text-danger">*</span></label>
+         <input type="text" name="claim_no" class="form-control" value="{{ isset($get_data->claim_no) ? $get_data->claim_no : old('claim_no')}}" placeholder="Enter Claim No" />
+   </div>
+<div class="col-md-5 form-group">
+         <label>Mileage</label>
+         <span class="text-danger">*</span></label>
+         <input type="text" name="mileage" class="form-control" value="{{ isset($get_data->mileage) ? $get_data->mileage : old('mileage')}}" placeholder="Enter Mileage" />
       </div>
          </div>
 

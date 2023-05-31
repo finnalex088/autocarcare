@@ -44,7 +44,7 @@
         serverSide: true,
         ajax: "{{ route('billing.index') }}",
         columns: [
-            {data: 'getjob.customer_name', name: 'getjob.customer_name'},
+            {data: 'customer_name', name: 'customer_name'},
            {data: 'action', name: 'action', orderable: true, searchable: true},
            ],
     });

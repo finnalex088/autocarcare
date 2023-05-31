@@ -7,7 +7,7 @@
 <!--begin::Card-->
 <div class="card card-custom gutter-b example example-compact">
 <div class="card-header">
-   <h3 class="card-title">Add Part</h3>
+   <h3 class="card-title">Add spare Category</h3>
 </div>
 <!--begin::Form-->
 <form action="{{ route('spareCategory.addUpdate')}}" enctype="multipart/form-data" id="form_validation" method="post" class="forms-sample">

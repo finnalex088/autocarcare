@@ -28,7 +28,7 @@ table tr th{
 <tbody>
 <tr>
 <td style="" >
-<img src="{{public_path('image/logo.jpg') }}" height="auto" width="100px">
+<img src="{{public_path('images/logo.jpg') }}" height="auto" width="100px">
 </td>
 <td style="padding-left:100px;font-size:12px">
 <h3 style="text-align:center">SHREE RAM AUTOMOBILES</h3>
@@ -69,11 +69,11 @@ table tr th{
         <tr ><th style="text-align:left">Job No.</th><td>:</td><td style="padding-left:100px;">6075000197</td></tr>
         <tr ><th style="text-align:left">Job. Date</th><td>:</td><td style="padding-left:100px;">{{$created_at}}</td></tr>
          <tr ><th style="text-align:left">Model</th><td>:</td><td style="padding-left:100px;">{{$model_id}}</td></tr>
-          <tr ><th style="text-align:left">VIN NO.</th><td>:</td><td style="padding-left:100px;">123</td></tr>
-           <tr ><th style="text-align:left">Service Type</th><td>:</td><td style="padding-left:100px;">Service</td></tr>
-            <tr ><th style="text-align:left">Policy No</th><td>:</td><td style="padding-left:100px;"></td></tr>
-             <tr ><th style="text-align:left">Claim No</th><td>:</td><td style="padding-left:100px;"></td></tr>
-              <tr ><th style="text-align:left">Mileage</th><td>:</td><td style="padding-left:100px;">83910</td></tr>
+          <tr ><th style="text-align:left">VIN NO.</th><td>:</td><td style="padding-left:100px;">{{$VIN_No}}</td></tr>
+           <tr ><th style="text-align:left">Service Type</th><td>:</td><td style="padding-left:100px;">{{$work_type}}</td></tr>
+            <tr ><th style="text-align:left">Policy No</th><td>:</td><td style="padding-left:100px;">{{$policy_no}}</td></tr>
+             <tr ><th style="text-align:left">Claim No</th><td>:</td><td style="padding-left:100px;">{{$claim_no}}</td></tr>
+              <tr ><th style="text-align:left">Mileage</th><td>:</td><td style="padding-left:100px;">{{$mileage}}</td></tr>
         </td>
         </tr>
     </tbody>
@@ -244,7 +244,6 @@ inform to customer</spam>
 </tbody>
 </table>
 
-    <h1>{{$job_id}}</h1>
-     <h1>{{$amount}}</h1>
+  
 </body>
 </html>

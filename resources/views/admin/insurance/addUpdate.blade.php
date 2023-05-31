@@ -11,6 +11,25 @@
    @csrf
    <input type="hidden" name="update_id" value="{{ isset($get_data->id) ? $get_data->id : ''}}">
    <div class="card-body">
+      <div class="col-md-10 form-group">
+      <label>Job Card</label>
+      <select class="form-control category_id" name="job_id" data-live-search="true" id="job_id">
+         <option value="">Selete Job</option>
+         @foreach($jobCard as $list)
+         <option value="{{$list['id']}}"
+         <?php 
+         if(!empty($get_data->job_id))
+         {
+            if($get_data->job_id ==$list['id'])
+            {
+                  echo "selected";
+               }
+            }
+         ?>
+         >{{$list['customer_name']}}</option>
+         @endforeach
+      </select>
+         </div>
       <div class="row">
       <div class="col-md-10 form-group">
          <label>Company Name
@@ -34,7 +53,7 @@
          <span class="text-danger">*</span></label>
          
          <!-- <input type="text" required="" placeholder="Insurance Type" name="insurance_period"  id="kt_daterangepicker_1"> -->
-         <input type="text" name="insurance_period" value="" />
+         <input type="date" name="insurance_period" value="" />
 
       </div>
 

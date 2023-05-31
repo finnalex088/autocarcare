@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('billings', function (Blueprint $table) {
-             $table->string('labour_types')->after('amount')->nullable();
+        Schema::create('insurance', function (Blueprint $table) {
+            $table->id();
+            $table->string('company_name');
+            $table->string('insurance_type');
+            $table->string('insurance_period');
+            $table->integer('job_id');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('billings', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('insurance');
     }
 };
