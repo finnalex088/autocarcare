@@ -98,10 +98,10 @@
      <label>Tax</label>
      <input type="text" class="form-control" id="tax" name="tax" value="{{ isset($get_data->tax) ? $get_data->tax : old('tax')}}"  placeholder="Tax">
      </div>
-     <div class="col-sm-6">
+     <!-- <div class="col-sm-6">
      <label>Profit Margin</label>
      <input type="text"  class="form-control" id="ProfitMargin" name="profit_margin" value="{{ isset($get_data->profit_margin) ? $get_data->profit_margin : old('profit_margin')}}" placeholder="Profit Margin">
-     </div>
+     </div> -->
      </div><br>
      <div class="row">
      <div class="col-sm-6">

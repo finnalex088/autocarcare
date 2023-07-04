@@ -26,7 +26,7 @@
           <li><a class="link_name" href="#">Job Cards</a></li>
           <li><a href="{{route('job_card.index')}}">Registration</a></li>
           <li><a href="{{route('insurance.index')}}">Insurance Details</a></li>
-          <li><a href="{{route('partissue.index')}}">Part Issue</a></li>
+          <li><a href="{{route('partissue.index')}}">Part Inventory</a></li>
         </ul>
       </li>
       <li>

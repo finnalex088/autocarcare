@@ -89,7 +89,7 @@
 
       <div class="col-md-10 form-group total_amount" id="total_amount" >
       <label>Total Amount +GST</label>
-         <input type="number" name="fix_total_amount" id="total" class="form-control"  />
+         <input type="number" name="fix_total_amount" id="total" class="form-control"  value="{{ isset($get_data->fix_total_amount) ? $get_data->fix_total_amount : old('fix_total_amount')}}" />
       </div>
 
       <div class="col-md-10 form-group percentage" id="percentage" >
@@ -99,7 +99,7 @@
 
       <div class="col-md-10 form-group total_amount1" id="total_amount1" placeholder="percentage price" >
       <label>Total Amount + GST</label>
-         <input type="number" name="percentage_total_amount" id="total1" class="form-control"   />
+         <input type="number" name="percentage_total_amount" id="total1" class="form-control"  value="{{ isset($get_data->percentage_total_amount) ? $get_data->percentage_total_amount : old('percentage_total_amount')}}" />
       </div>
 
 </div>
@@ -239,7 +239,8 @@ var ele = document.getElementById("labour");
     var maxField = 10; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
-    var fieldHTML = '<div><input type="text" class="form-control" name="field_name[]" value=""/> <a href="javascript:void(0);" class="add_button1" title="Add field"><i class="fa fa-plus"></i></a><a href="javascript:void(0);" class="remove_button"> <i class="fa fa-minus"></i></a></div>'; //New input field html 
+    
+    var fieldHTML = '<div><input type="text" class="form-control" name="field_name[]"> <a href="javascript:void(0);" class="add_button1" title="Add field"><i class="fa fa-plus"></i></a><a href="javascript:void(0);" class="remove_button"> <i class="fa fa-minus"></i></a></div>'; //New input field html 
     var x = 1; //Initial field counter is 1
     
     //Once add button is clicked
@@ -250,6 +251,7 @@ var ele = document.getElementById("labour");
             $(wrapper).append(fieldHTML); //Add field html
         }
     });
+ 
 	
 	
 	  $(wrapper).on('click', '.add_button1', function(e){

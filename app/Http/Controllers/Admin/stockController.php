@@ -48,7 +48,7 @@ class stockController extends Controller
             $stock->Purchase_price = $request->Purchase_price;
             $stock->sales_price = $request->sales_price;
             $stock->tax = $request->tax;
-            $stock->profit_margin = $request->profit_margin;
+            // $stock->profit_margin = $request->profit_margin;
             $stock->UNT = $request->UNT;
             $stock->location = $request->location;
             $stock->low_stock_quantity = $request->low_stock_quantity;

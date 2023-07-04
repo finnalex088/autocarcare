@@ -25,7 +25,7 @@ class userController extends Controller
     $user->address = $request->input('address');
     $user->phone = $request->input('phone');
     $user->save();
-    $decryptedPassword = Crypt::decryptString($user->password);
+    // $decryptedPassword = Crypt::decryptString($user->password);
     $request->session()->flash('success', 'User Profile updated successfully!');
     // Redirect back to the user update page
     return redirect()->route('userAddUpdate');

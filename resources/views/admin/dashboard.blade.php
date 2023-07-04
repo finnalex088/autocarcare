@@ -34,7 +34,7 @@
                     </div>
                     <div class="box box3">
                         <i class="uil uil-share"></i>
-                       <a href="{{route('partissue.index')}}"> <span class="text">Parts name</span></a>
+                       <a href="{{route('partissue.index')}}"> <span class="text">Total Parts</span></a>
                        <span class="number">{{$part}}</span>
                     </div>
                 </div>

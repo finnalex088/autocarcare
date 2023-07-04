@@ -55,7 +55,6 @@ table tr th{
   <table style="font-size:15px;">
     <tbody>
     <tr>
-    
     <td>   
         <tr ><th style="text-align:left">Bill No</th><td>:</td><td style="padding-left:100px;">20-21/8075000191</td></tr>
         <tr ><th style="text-align:left">Customer ID</th><td>:</td><td style="padding-left:100px;">{{$id}}</td></tr>
@@ -82,29 +81,32 @@ table tr th{
 <table  style="font-size:12px; border-spacing: 20px;">
 <thead style="border-top:1px solid black;border-bottom:1px solid black;">
   <tr>
- <th style="text-align:left">Sr. No.</th>
+    <th style="text-align:left">Sr. No.</th>
     <th style="text-align:left">Part Description</th>
-    <th style="text-align:left">UOM</th>
+    <th style="text-align:left">UNT</th>
     <th style="text-align:left">HSN/SACCode</th >
-     <th>MRP</th>
-      <th style="text-align:left">Tax %</th>
-       <th style="text-align:left">Qty.</th>
-        <th style="text-align:left">Rate</th>
-         <th style="text-align:left">Taxable Amt</th>
-          <th style="text-align:left">Taxable Labor Amt. </th>
-           </tr>
-  </thead>
+    <th>MRP</th>
+    <th style="text-align:left">Tax %</th>
+    <th style="text-align:left">Qty.</th>
+    <th style="text-align:left">Rate</th>
+    <th style="text-align:left">Taxable Amt</th>
+    <th style="text-align:left">Taxable Labor Amt. </th>
+  </tr>
+</thead>
     <h3>Parts</h3>
-  <tr>
+    <tr>
     <td>1</td>
     <td> {{$part_name}}</td>
-    <td>LTR</td>
-    <td>2710</td>
+    <td>{{$UNT}}</td>
+    <td>{{$HSN_code}}</td>
     <td>1367.98 </td>
-    <td>18</td>
-    <td>3.60 </td>
-    <td>322.03 </td>
-    <td>1159.31</td>
+    <td>18%</td>
+    <td>{{$part_quantity}}</td>
+    <td>{{$amount}}</td>
+   <td>{{ $fix_total_amount == null ? $percentage_total_amount : $fix_total_amount  }}</td>
+
+
+
     <td></td>
   </tr>
   <h3>Labour</h3>
@@ -127,7 +129,7 @@ table tr th{
     <th style="text-align:left">Taxable Amt</th>
     <th style="text-align:left">SGST</th>
     <th style="text-align:left">CGST</th>
-    <th style="text-align:left">CGST</th>
+   
     <th style="text-align:left">Sub Total</th>
   </tr>
   </thead>
@@ -139,13 +141,13 @@ table tr th{
     <td>3258.59</td>
     <td>456.00</td>
     <td>456.00 </td>
-    <td></td>
+   
     <td>4170.59 </td>
     </tr>
    <tr>
     <td>GST@ 28% on Parts</td>
     <td> 3258.59 </td>
-    <td></td>
+   
     <td>3258.59</td>
     <td>456.00</td>
     <td>456.00 </td>

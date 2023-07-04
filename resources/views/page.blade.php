@@ -1,1 +1,0 @@
-<a href="/generatepdf">download pdf</a>
