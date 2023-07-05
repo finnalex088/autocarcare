@@ -115,6 +115,7 @@ table tr th{
     <td>1367.98 </td>
     <td>18</td>
     </tr>
+    
 </table>
 
 <table  style="font-size:12px; border-spacing: 28px;width:700px;">
@@ -171,16 +172,18 @@ table tr th{
  <tbody  style="border-bottom:1px solid black;">
   <tr>
    @php
-    
-    $labourCGST=$labour_fix_amount*0.09;
-    $labourSGST=$labour_fix_amount*0.09;
-   $total_labour_charges=$labour_fix_amount+$labourCGST+ $labourSGST;
+    $discount=0;
+   $taxable_amount=$labour_fix_amount-$discount;
+    $labourCGST=$taxable_amount*0.09;
+    $labourSGST=$taxable_amount*0.09;
+   $total_labour_charges=$taxable_amount+$labourCGST+ $labourSGST;
    $net_amount=$net_total_amount+$total_labour_charges;
+   
 @endphp
-    <td>GST@ 28% on labours</td>
+    <td>GST@ 18% on labours</td>
     <td> {{$labour_fix_amount}} </td>
-    <td></td>
-    <td>{{$labour_fix_amount}} </td>
+    <td>{{$discount}}</td>
+    <td>{{$taxable_amount}} </td>
     <td>{{$labourCGST}}</td>
     <td>{{$labourSGST}}</td>
    
