@@ -78,19 +78,19 @@ table tr th{
     </tbody>
 </table>
 
-<table  style="font-size:12px; border-spacing: 20px;">
+<table  style="font-size:12px; border-spacing: 20px;width: 700px;">
 <thead style="border-top:1px solid black;border-bottom:1px solid black;">
   <tr>
     <th style="text-align:left">Sr. No.</th>
     <th style="text-align:left">Part Description</th>
     <th style="text-align:left">UNT</th>
     <th style="text-align:left">HSN/SACCode</th >
-    <th>MRP</th>
+   
     <th style="text-align:left">Tax %</th>
     <th style="text-align:left">Qty.</th>
     <th style="text-align:left">Rate</th>
     <th style="text-align:left">Taxable Amt</th>
-    <th style="text-align:left">Taxable Labor Amt. </th>
+   
   </tr>
 </thead>
     <h3>Parts</h3>
@@ -99,16 +99,13 @@ table tr th{
     <td> {{$part_name}}</td>
     <td>{{$UNT}}</td>
     <td>{{$HSN_code}}</td>
-    <td>1367.98 </td>
+    
     <td>18%</td>
-    <td>{{$part_quantity}}</td>
+    <td>{{$count}}</td>
     <td>{{$amount}}</td>
-   <td>{{ $fix_total_amount == null ? $percentage_total_amount : $fix_total_amount  }}</td>
-
-
-
-    <td></td>
-  </tr>
+    <td>{{ $fix_total_amount == null ? $percentage_total_amount : $fix_total_amount  }}</td>
+    
+    </tr>
   <h3>Labour</h3>
    <tr>
     <td>1</td>
@@ -120,7 +117,7 @@ table tr th{
     </tr>
 </table>
 
-<table  style="font-size:12px; border-spacing: 28px;">
+<table  style="font-size:12px; border-spacing: 28px;width:700px;">
 <thead  style="border-top:1px solid black;border-bottom:1px solid black;">
   <tr>
     <th style="text-align:left">GST %</th>
@@ -135,42 +132,59 @@ table tr th{
   </thead>
   <tbody>
   <tr>
-    <td>GST@ 28% on Parts</td>
-    <td> 3258.59 </td>
+  @php
+    $total_amount = $fix_total_amount == null ? $percentage_total_amount : $fix_total_amount;
+    $cgst=$total_amount*0.09;
+    $sgst=$total_amount*0.09;
+    $cgst1=$total_amount*0.14;
+    $sgst1=$total_amount*0.14;
+    $total_amount1=$total_amount+$cgst+$sgst;
+    $total_amount2=$total_amount+$cgst1+$sgst1;
+    $net_total_amount=$total_amount1+$total_amount2;
+@endphp
+    <td>GST@ 18% on Parts</td>
+    <td> {{ $total_amount }} </td>
     <td></td>
-    <td>3258.59</td>
-    <td>456.00</td>
-    <td>456.00 </td>
+    <td>{{ $total_amount }}</td>
+    <td>{{$cgst}}</td>
+    <td>{{$sgst}} </td>
    
-    <td>4170.59 </td>
+    <td>{{ $total_amount1}}</td>
     </tr>
    <tr>
-    <td>GST@ 28% on Parts</td>
-    <td> 3258.59 </td>
-   
-    <td>3258.59</td>
-    <td>456.00</td>
-    <td>456.00 </td>
-    <td></td>
-    <td>4170.59 </td>
+    <td>GST@ 18% on Parts</td>
+    <td> {{$total_amount}} </td>
+   <td></td>
+    <td>{{ $total_amount }}</td>
+    <td>{{$cgst1}}</td>
+    <td>{{$sgst1}} </td>
+    <td>{{ $total_amount2}}</td>
+    
     </tr>
   <tbody>
  <tfoot  style="border-bottom:1px solid black;">
             <tr>
-                <th style="text-align:left" colspan="7">Total Parts Amount</th>
-                <td style="text-align:right">₹160</td>
+                <th style="text-align:left" colspan="6">Total Parts Amount</th>
+                <td style="text-align:left;font-weight:bold;">{{$net_total_amount}}</td>
             </tr>
         </tfoot>
  <tbody  style="border-bottom:1px solid black;">
   <tr>
-    <td>GST@ 28% on Parts</td>
-    <td> 3258.59 </td>
+   @php
+    
+    $labourCGST=$labour_fix_amount*0.09;
+    $labourSGST=$labour_fix_amount*0.09;
+   $total_labour_charges=$labour_fix_amount+$labourCGST+ $labourSGST;
+   $net_amount=$net_total_amount+$total_labour_charges;
+@endphp
+    <td>GST@ 28% on labours</td>
+    <td> {{$labour_fix_amount}} </td>
     <td></td>
-    <td>3258.59</td>
-    <td>456.00</td>
-    <td>456.00 </td>
-    <td></td>
-    <td>4170.59 </td>
+    <td>{{$labour_fix_amount}} </td>
+    <td>{{$labourCGST}}</td>
+    <td>{{$labourSGST}}</td>
+   
+    <td>{{ $total_labour_charges}}</td>
     
   </tr>
   </tbody>     
@@ -180,7 +194,7 @@ table tr th{
 <thead style="border-bottom:1px solid black;">
 <tr>
 <th style="width:430px;"></th>
-<th style="font-size:13px">Net Bill Amount (Rounded off) : 8015.00</th>
+<th style="font-size:13px">Net Bill Amount (Rounded off) : {{$net_amount}}</th>
 </tr>
 
 </thead>

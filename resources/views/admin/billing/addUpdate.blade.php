@@ -84,7 +84,7 @@
          
     <div class="col-md-10 form-group fix_price" id="fix_price" >
          
-         <input type="number" name="total_amount" class="form-control fix_price1" id="fix_price1" placeholder="enter fix price"  />
+         <input type="number" name="labour_fix_amount" class="form-control fix_price1" id="fix_price1" placeholder="enter fix price"  />
       </div>
 
       <div class="col-md-10 form-group total_amount" id="total_amount" >

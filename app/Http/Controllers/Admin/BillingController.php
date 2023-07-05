@@ -66,6 +66,7 @@ public function addUpdate(Request $request , $id = null)
             $billing->job_id   = $request->job_id;
             $billing->partid   = $data;
             $billing->amount  = $request->amount;
+            $billing->labour_fix_amount  = $request->labour_fix_amount;
             $billing->fix_total_amount  = $request->fix_total_amount;
             $billing->percentage_total_amount = $request->percentage_total_amount;
             $billing->save();
@@ -121,8 +122,9 @@ public function addUpdate(Request $request , $id = null)
     $insurance = Insurance::where('job_id', $billing->job_id)->first();
     $stock=Stock::where('id',$jobCard->spare_category_id)->first();
     $partId = $billing->partid;
-    $count = Billing::whereRaw('JSON_CONTAINS(partid, ?)', json_encode($partId))
-    ->count();
+    $count = Billing::whereIn('partid', [$partId])->count();
+
+    
     log::info($partId);
     log::info($count);
     // $jobCards = JobCard::where('spare_category_id', $spareCategory->id)->get();
@@ -147,9 +149,11 @@ public function addUpdate(Request $request , $id = null)
         'HSN_code'=>$stock->HSN_code,
         'tax'=>$stock->tax,
         'spare_part_name'=>$stock->spare_part_name,
-       'amount'=>$billing->amount,
-       'fix_total_amount'=>$billing->fix_total_amount,
-       'percentage_total_amount'=>$billing->percentage_total_amount,
+        'amount'=>$billing->amount,
+        'fix_total_amount'=>$billing->fix_total_amount,
+        'percentage_total_amount'=>$billing->percentage_total_amount,
+        'labour_fix_amount'=>$billing->labour_fix_amount,
+        'count' => $count,
     ];
     $pdf = PDF::loadView('pdf', $data);
     return $pdf->download('bill.pdf');
